@@ -1,6 +1,6 @@
 ﻿namespace ArtGalleryOrganizer
 {
-    partial class Form1
+    partial class ExhibitionsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(894, 516);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ExhibitionsManagement";
         }
 
         #endregion
     }
 }
-

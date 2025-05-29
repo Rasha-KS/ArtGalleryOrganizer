@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ArtGalleryOrganizer
 {
-    public partial class Form1 : Form
+    public partial class ExhibitionsManagement : Form
     {
-        public Form1()
+        public ExhibitionsManagement()
         {
             InitializeComponent();
         }
