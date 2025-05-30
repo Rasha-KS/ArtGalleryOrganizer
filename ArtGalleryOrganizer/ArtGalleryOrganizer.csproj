@@ -82,6 +82,9 @@
     <EmbeddedResource Include="Forms\ArtistsManagement.resx">
       <DependentUpon>ArtistsManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArtworksManagement.resx">
+      <DependentUpon>ArtworksManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExhibitionsManagement.resx">
       <DependentUpon>ExhibitionsManagement.cs</DependentUpon>
     </EmbeddedResource>
