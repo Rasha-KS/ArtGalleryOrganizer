@@ -16,7 +16,7 @@ namespace ArtGalleryOrganizer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ArtistsManagement());
+            Application.Run(new ExhibitionsManagement());
         }
     }
 }
