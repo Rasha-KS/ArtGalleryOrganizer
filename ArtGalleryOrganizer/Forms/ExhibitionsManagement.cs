@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentProject1.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace ArtGalleryOrganizer
         public ExhibitionsManagement()
         {
             InitializeComponent();
+        }
+
+        ResizeControls r = new ResizeControls();
+
+        private void ExhibitionsManagement_HandleCreated(object sender, EventArgs e)
+        {
+            r.Container = this;
+        }
+
+        private void ExhibitionsManagement_Resize(object sender, EventArgs e)
+        {
+            r.ResizeControl();
+        }
+
+        private void ExhibitionsManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

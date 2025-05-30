@@ -75,6 +75,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
@@ -102,8 +103,8 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.dataGridView1.Location = new System.Drawing.Point(660, 33);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(566, 27);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -119,7 +120,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 26;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(766, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 325);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id
@@ -128,7 +129,6 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 50;
             // 
             // Column_Name
             // 
@@ -136,7 +136,6 @@
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
             this.Column_Name.ReadOnly = true;
-            this.Column_Name.Width = 130;
             // 
             // Column_Email
             // 
@@ -144,7 +143,6 @@
             this.Column_Email.MinimumWidth = 6;
             this.Column_Email.Name = "Column_Email";
             this.Column_Email.ReadOnly = true;
-            this.Column_Email.Width = 150;
             // 
             // Column_Nationality
             // 
@@ -152,7 +150,6 @@
             this.Column_Nationality.MinimumWidth = 6;
             this.Column_Nationality.Name = "Column_Nationality";
             this.Column_Nationality.ReadOnly = true;
-            this.Column_Nationality.Width = 120;
             // 
             // Column_Phone
             // 
@@ -160,7 +157,6 @@
             this.Column_Phone.MinimumWidth = 6;
             this.Column_Phone.Name = "Column_Phone";
             this.Column_Phone.ReadOnly = true;
-            this.Column_Phone.Width = 120;
             // 
             // Column_IsActive
             // 
@@ -168,16 +164,14 @@
             this.Column_IsActive.MinimumWidth = 6;
             this.Column_IsActive.Name = "Column_IsActive";
             this.Column_IsActive.ReadOnly = true;
-            this.Column_IsActive.Width = 85;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label1.Location = new System.Drawing.Point(16, 68);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 46);
+            this.label1.Size = new System.Drawing.Size(146, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Artist Name";
             // 
@@ -185,10 +179,9 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label2.Location = new System.Drawing.Point(16, 118);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(14, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 46);
+            this.label2.Size = new System.Drawing.Size(138, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Work Style";
             // 
@@ -207,11 +200,11 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.groupBox1.Location = new System.Drawing.Point(28, 506);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.groupBox1.Location = new System.Drawing.Point(24, 411);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1444, 313);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1238, 254);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Artists Work Styles";
@@ -221,10 +214,10 @@
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox5.Location = new System.Drawing.Point(299, 184);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBox5.Location = new System.Drawing.Point(256, 150);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(264, 39);
+            this.textBox5.Size = new System.Drawing.Size(227, 32);
             this.textBox5.TabIndex = 26;
             // 
             // button4
@@ -232,10 +225,10 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button4.Location = new System.Drawing.Point(458, 246);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button4.Location = new System.Drawing.Point(393, 200);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 46);
+            this.button4.Size = new System.Drawing.Size(143, 37);
             this.button4.TabIndex = 24;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = false;
@@ -244,16 +237,16 @@
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label7.Location = new System.Drawing.Point(16, 186);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(14, 151);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(237, 39);
+            this.label7.Size = new System.Drawing.Size(203, 32);
             this.label7.TabIndex = 25;
             this.label7.Text = "Work Experience";
             // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
@@ -269,12 +262,16 @@
             this.Column_WorkStyle,
             this.Column_WorkExperience});
             this.dataGridView3.EnableHeadersVisualStyles = false;
-            this.dataGridView3.Location = new System.Drawing.Point(660, 33);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dataGridView3.Location = new System.Drawing.Point(566, 27);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 26;
-            this.dataGridView3.Size = new System.Drawing.Size(766, 259);
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(657, 210);
             this.dataGridView3.TabIndex = 24;
             // 
             // Column_ArtistName
@@ -282,31 +279,31 @@
             this.Column_ArtistName.HeaderText = "Artist Name";
             this.Column_ArtistName.MinimumWidth = 6;
             this.Column_ArtistName.Name = "Column_ArtistName";
-            this.Column_ArtistName.Width = 150;
+            this.Column_ArtistName.ReadOnly = true;
             // 
             // Column_WorkStyle
             // 
             this.Column_WorkStyle.HeaderText = "Work Style ";
             this.Column_WorkStyle.MinimumWidth = 6;
             this.Column_WorkStyle.Name = "Column_WorkStyle";
-            this.Column_WorkStyle.Width = 200;
+            this.Column_WorkStyle.ReadOnly = true;
             // 
             // Column_WorkExperience
             // 
             this.Column_WorkExperience.HeaderText = "Work Experience";
             this.Column_WorkExperience.MinimumWidth = 6;
             this.Column_WorkExperience.Name = "Column_WorkExperience";
-            this.Column_WorkExperience.Width = 255;
+            this.Column_WorkExperience.ReadOnly = true;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button5.Location = new System.Drawing.Point(232, 246);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button5.Location = new System.Drawing.Point(199, 200);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 46);
+            this.button5.Size = new System.Drawing.Size(144, 37);
             this.button5.TabIndex = 23;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -316,10 +313,10 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button6.Location = new System.Drawing.Point(21, 246);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button6.Location = new System.Drawing.Point(18, 200);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(167, 46);
+            this.button6.Size = new System.Drawing.Size(143, 37);
             this.button6.TabIndex = 22;
             this.button6.Text = "Save";
             this.button6.UseVisualStyleBackColor = false;
@@ -330,20 +327,19 @@
             this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(299, 51);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.comboBox2.Location = new System.Drawing.Point(256, 41);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 39);
+            this.comboBox2.Size = new System.Drawing.Size(227, 33);
             this.comboBox2.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label6.Location = new System.Drawing.Point(16, 53);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(14, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 46);
+            this.label6.Size = new System.Drawing.Size(146, 37);
             this.label6.TabIndex = 14;
             this.label6.Text = "Artist Name";
             // 
@@ -353,10 +349,10 @@
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(299, 116);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.comboBox1.Location = new System.Drawing.Point(256, 94);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 39);
+            this.comboBox1.Size = new System.Drawing.Size(227, 33);
             this.comboBox1.TabIndex = 6;
             // 
             // groupBox2
@@ -377,11 +373,11 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.groupBox2.Location = new System.Drawing.Point(28, 28);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.groupBox2.Location = new System.Drawing.Point(24, 23);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1444, 455);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1238, 370);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Artists Information";
@@ -391,10 +387,10 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button3.Location = new System.Drawing.Point(458, 386);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button3.Location = new System.Drawing.Point(393, 314);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(167, 46);
+            this.button3.Size = new System.Drawing.Size(143, 37);
             this.button3.TabIndex = 21;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -404,10 +400,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button2.Location = new System.Drawing.Point(232, 386);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button2.Location = new System.Drawing.Point(199, 314);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 46);
+            this.button2.Size = new System.Drawing.Size(144, 37);
             this.button2.TabIndex = 20;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
@@ -417,10 +413,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.button1.Location = new System.Drawing.Point(21, 386);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button1.Location = new System.Drawing.Point(18, 314);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 46);
+            this.button1.Size = new System.Drawing.Size(143, 37);
             this.button1.TabIndex = 19;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
@@ -430,10 +426,10 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.checkBox1.Location = new System.Drawing.Point(489, 288);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.checkBox1.Location = new System.Drawing.Point(419, 234);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 36);
+            this.checkBox1.Size = new System.Drawing.Size(114, 29);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Is Active";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -443,10 +439,10 @@
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.textBox4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox4.Location = new System.Drawing.Point(192, 288);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBox4.Location = new System.Drawing.Point(165, 234);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 39);
+            this.textBox4.Size = new System.Drawing.Size(227, 32);
             this.textBox4.TabIndex = 13;
             // 
             // textBox3
@@ -454,20 +450,19 @@
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox3.Location = new System.Drawing.Point(192, 213);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBox3.Location = new System.Drawing.Point(165, 173);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(264, 39);
+            this.textBox3.Size = new System.Drawing.Size(227, 32);
             this.textBox3.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label5.Location = new System.Drawing.Point(18, 290);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(15, 236);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 50);
+            this.label5.Size = new System.Drawing.Size(81, 41);
             this.label5.TabIndex = 12;
             this.label5.Text = "Phone";
             // 
@@ -476,20 +471,19 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox1.Location = new System.Drawing.Point(192, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBox1.Location = new System.Drawing.Point(165, 54);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 39);
+            this.textBox1.Size = new System.Drawing.Size(227, 32);
             this.textBox1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label4.Location = new System.Drawing.Point(18, 140);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(15, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 39);
+            this.label4.Size = new System.Drawing.Size(98, 32);
             this.label4.TabIndex = 10;
             this.label4.Text = "Email";
             // 
@@ -498,33 +492,32 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox2.Location = new System.Drawing.Point(192, 140);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBox2.Location = new System.Drawing.Point(165, 114);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(264, 39);
+            this.textBox2.Size = new System.Drawing.Size(227, 32);
             this.textBox2.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label3.Location = new System.Drawing.Point(16, 217);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(14, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 39);
+            this.label3.Size = new System.Drawing.Size(137, 32);
             this.label3.TabIndex = 8;
             this.label3.Text = "Nationality";
             // 
             // ArtistsManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1498, 844);
+            this.ClientSize = new System.Drawing.Size(1284, 684);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ArtistsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArtistsManagement";
