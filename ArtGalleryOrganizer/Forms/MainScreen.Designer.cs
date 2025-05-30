@@ -235,7 +235,7 @@
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.panel9);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.panel8.Location = new System.Drawing.Point(961, 172);
+            this.panel8.Location = new System.Drawing.Point(961, 176);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(274, 73);
             this.panel8.TabIndex = 35;
@@ -288,7 +288,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel7);
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.panel6.Location = new System.Drawing.Point(646, 172);
+            this.panel6.Location = new System.Drawing.Point(650, 176);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(256, 73);
             this.panel6.TabIndex = 34;
@@ -394,7 +394,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel2);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.panel3.Location = new System.Drawing.Point(30, 172);
+            this.panel3.Location = new System.Drawing.Point(30, 176);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 73);
             this.panel3.TabIndex = 32;
