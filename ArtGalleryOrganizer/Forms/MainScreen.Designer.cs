@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.btnArtists = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnArtworks = new System.Windows.Forms.Button();
+            this.btnExhibitions = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -54,10 +61,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnExhibitions = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
-            this.btnArtworks = new System.Windows.Forms.Button();
-            this.btnArtists = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -76,10 +79,11 @@
             this.ArtworksCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel8.SuspendLayout();
@@ -104,13 +108,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.pictureBox16);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel6);
@@ -132,6 +135,16 @@
             this.panel1.Size = new System.Drawing.Size(1264, 700);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(214, 27);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(165, 114);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 3;
+            this.pictureBox16.TabStop = false;
+            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -147,6 +160,28 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(581, 408);
             this.panel10.TabIndex = 36;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(64, 215);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(167, 130);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 31;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(337, 206);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(167, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox12
             // 
@@ -169,6 +204,62 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 0;
             this.pictureBox11.TabStop = false;
+            // 
+            // btnArtists
+            // 
+            this.btnArtists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnArtists.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArtists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.btnArtists.Location = new System.Drawing.Point(28, 149);
+            this.btnArtists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnArtists.Name = "btnArtists";
+            this.btnArtists.Size = new System.Drawing.Size(242, 39);
+            this.btnArtists.TabIndex = 26;
+            this.btnArtists.Text = "Artists Management";
+            this.btnArtists.UseVisualStyleBackColor = false;
+            this.btnArtists.Click += new System.EventHandler(this.btnArtists_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSales.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.btnSales.Location = new System.Drawing.Point(29, 350);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(241, 39);
+            this.btnSales.TabIndex = 28;
+            this.btnSales.Text = "Sales";
+            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
+            // btnArtworks
+            // 
+            this.btnArtworks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnArtworks.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArtworks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.btnArtworks.Location = new System.Drawing.Point(308, 149);
+            this.btnArtworks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnArtworks.Name = "btnArtworks";
+            this.btnArtworks.Size = new System.Drawing.Size(242, 39);
+            this.btnArtworks.TabIndex = 27;
+            this.btnArtworks.Text = "Artworks Management";
+            this.btnArtworks.UseVisualStyleBackColor = false;
+            this.btnArtworks.Click += new System.EventHandler(this.btnArtworks_Click);
+            // 
+            // btnExhibitions
+            // 
+            this.btnExhibitions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnExhibitions.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExhibitions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.btnExhibitions.Location = new System.Drawing.Point(302, 350);
+            this.btnExhibitions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExhibitions.Name = "btnExhibitions";
+            this.btnExhibitions.Size = new System.Drawing.Size(255, 39);
+            this.btnExhibitions.TabIndex = 29;
+            this.btnExhibitions.Text = "Exhibitions Management";
+            this.btnExhibitions.UseVisualStyleBackColor = false;
+            this.btnExhibitions.Click += new System.EventHandler(this.btnExhibitions_Click);
             // 
             // panel8
             // 
@@ -382,68 +473,12 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "25";
             // 
-            // btnExhibitions
-            // 
-            this.btnExhibitions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnExhibitions.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExhibitions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnExhibitions.Location = new System.Drawing.Point(302, 350);
-            this.btnExhibitions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExhibitions.Name = "btnExhibitions";
-            this.btnExhibitions.Size = new System.Drawing.Size(255, 39);
-            this.btnExhibitions.TabIndex = 29;
-            this.btnExhibitions.Text = "Exhibitions Management";
-            this.btnExhibitions.UseVisualStyleBackColor = false;
-            this.btnExhibitions.Click += new System.EventHandler(this.btnExhibitions_Click);
-            // 
-            // btnSales
-            // 
-            this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnSales.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnSales.Location = new System.Drawing.Point(29, 350);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(241, 39);
-            this.btnSales.TabIndex = 28;
-            this.btnSales.Text = "Sales";
-            this.btnSales.UseVisualStyleBackColor = false;
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-            // 
-            // btnArtworks
-            // 
-            this.btnArtworks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnArtworks.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArtworks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnArtworks.Location = new System.Drawing.Point(308, 149);
-            this.btnArtworks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnArtworks.Name = "btnArtworks";
-            this.btnArtworks.Size = new System.Drawing.Size(242, 39);
-            this.btnArtworks.TabIndex = 27;
-            this.btnArtworks.Text = "Artworks Management";
-            this.btnArtworks.UseVisualStyleBackColor = false;
-            this.btnArtworks.Click += new System.EventHandler(this.btnArtworks_Click);
-            // 
-            // btnArtists
-            // 
-            this.btnArtists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnArtists.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArtists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnArtists.Location = new System.Drawing.Point(28, 149);
-            this.btnArtists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnArtists.Name = "btnArtists";
-            this.btnArtists.Size = new System.Drawing.Size(242, 39);
-            this.btnArtists.TabIndex = 26;
-            this.btnArtists.Text = "Artists Management";
-            this.btnArtists.UseVisualStyleBackColor = false;
-            this.btnArtists.Click += new System.EventHandler(this.btnArtists_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(319, 129);
+            this.pictureBox2.Location = new System.Drawing.Point(428, 123);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(17, 15);
+            this.pictureBox2.Size = new System.Drawing.Size(16, 14);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
@@ -451,9 +486,9 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(875, 135);
+            this.pictureBox17.Location = new System.Drawing.Point(811, 125);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(19, 17);
+            this.pictureBox17.Size = new System.Drawing.Size(18, 16);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 18;
             this.pictureBox17.TabStop = false;
@@ -461,9 +496,9 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(783, 47);
+            this.pictureBox15.Location = new System.Drawing.Point(762, 56);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox15.Size = new System.Drawing.Size(22, 21);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 16;
             this.pictureBox15.TabStop = false;
@@ -471,9 +506,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(586, 114);
+            this.pictureBox14.Location = new System.Drawing.Point(633, 123);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(17, 15);
+            this.pictureBox14.Size = new System.Drawing.Size(15, 14);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 15;
             this.pictureBox14.TabStop = false;
@@ -481,9 +516,9 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(989, 59);
+            this.pictureBox10.Location = new System.Drawing.Point(930, 64);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(19, 20);
+            this.pictureBox10.Size = new System.Drawing.Size(18, 19);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 10;
             this.pictureBox10.TabStop = false;
@@ -491,9 +526,9 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(257, 33);
+            this.pictureBox9.Location = new System.Drawing.Point(385, 56);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox9.Size = new System.Drawing.Size(19, 21);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
@@ -501,30 +536,31 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(997, 63);
+            this.pictureBox6.Location = new System.Drawing.Point(939, 67);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox6.Size = new System.Drawing.Size(28, 27);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(451, 39);
+            this.pictureBox3.Location = new System.Drawing.Point(495, 56);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox3.Size = new System.Drawing.Size(20, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Edwardian Script ITC", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Edwardian Script ITC", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.label1.Location = new System.Drawing.Point(235, 33);
+            this.label1.Location = new System.Drawing.Point(259, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(810, 100);
+            this.label1.Size = new System.Drawing.Size(809, 99);
             this.label1.TabIndex = 1;
             this.label1.Text = "Illuminating the art world, star by star.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -638,28 +674,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Date:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(337, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 139);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(64, 215);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(167, 130);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 31;
-            this.pictureBox13.TabStop = false;
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,7 +690,10 @@
             this.HandleCreated += new System.EventHandler(this.MainScreen_HandleCreated);
             this.Resize += new System.EventHandler(this.MainScreen_Resize);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel8.ResumeLayout(false);
@@ -705,8 +722,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -761,5 +776,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ArtworksCount;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox16;
     }
 }
