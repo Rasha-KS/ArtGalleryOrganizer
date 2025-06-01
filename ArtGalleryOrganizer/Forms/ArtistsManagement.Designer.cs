@@ -33,12 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,7 +52,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,6 +59,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -91,8 +89,7 @@
             this.Column_Name,
             this.Column_Email,
             this.Column_Nationality,
-            this.Column_Phone,
-            this.Column_IsActive});
+            this.Column_Phone});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,48 +119,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(657, 325);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.HeaderText = "Name";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.ReadOnly = true;
-            // 
-            // Column_Email
-            // 
-            this.Column_Email.HeaderText = "Email";
-            this.Column_Email.MinimumWidth = 6;
-            this.Column_Email.Name = "Column_Email";
-            this.Column_Email.ReadOnly = true;
-            // 
-            // Column_Nationality
-            // 
-            this.Column_Nationality.HeaderText = "Nationality";
-            this.Column_Nationality.MinimumWidth = 6;
-            this.Column_Nationality.Name = "Column_Nationality";
-            this.Column_Nationality.ReadOnly = true;
-            // 
-            // Column_Phone
-            // 
-            this.Column_Phone.HeaderText = "Phone";
-            this.Column_Phone.MinimumWidth = 6;
-            this.Column_Phone.Name = "Column_Phone";
-            this.Column_Phone.ReadOnly = true;
-            // 
-            // Column_IsActive
-            // 
-            this.Column_IsActive.HeaderText = "Is Active";
-            this.Column_IsActive.MinimumWidth = 6;
-            this.Column_IsActive.Name = "Column_IsActive";
-            this.Column_IsActive.ReadOnly = true;
             // 
             // label1
             // 
@@ -361,7 +316,6 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.textBox3);
@@ -420,19 +374,6 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.checkBox1.Location = new System.Drawing.Point(419, 234);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 29);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Is Active";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox4
             // 
@@ -508,6 +449,41 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Nationality";
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.HeaderText = "Name";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.ReadOnly = true;
+            // 
+            // Column_Email
+            // 
+            this.Column_Email.HeaderText = "Email";
+            this.Column_Email.MinimumWidth = 6;
+            this.Column_Email.Name = "Column_Email";
+            this.Column_Email.ReadOnly = true;
+            // 
+            // Column_Nationality
+            // 
+            this.Column_Nationality.HeaderText = "Nationality";
+            this.Column_Nationality.MinimumWidth = 6;
+            this.Column_Nationality.Name = "Column_Nationality";
+            this.Column_Nationality.ReadOnly = true;
+            // 
+            // Column_Phone
+            // 
+            this.Column_Phone.HeaderText = "Phone";
+            this.Column_Phone.MinimumWidth = 6;
+            this.Column_Phone.Name = "Column_Phone";
+            this.Column_Phone.ReadOnly = true;
+            // 
             // ArtistsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,24 +527,22 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Nationality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_IsActive;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_ArtistName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkStyle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkExperience;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Nationality;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Phone;
     }
 }

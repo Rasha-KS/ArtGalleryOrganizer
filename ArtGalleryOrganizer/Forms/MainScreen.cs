@@ -1,4 +1,5 @@
-﻿using StudentProject1.Classes;
+﻿using ArtGalleryOrganizer.Forms;
+using StudentProject1.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,15 +31,28 @@ namespace ArtGalleryOrganizer
             r.ResizeControl();
         }
 
-
-        private void MainScreen_Load(object sender, EventArgs e)
+        private void btnArtists_Click(object sender, EventArgs e)
         {
-
+            ArtistsManagement am = new ArtistsManagement();
+            am.ShowDialog();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnArtworks_Click(object sender, EventArgs e)
         {
+            ArtworksManagement artworksManagement = new ArtworksManagement();
+            artworksManagement.ShowDialog();
+        }
 
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales();
+            sales.ShowDialog();
+        }
+
+        private void btnExhibitions_Click(object sender, EventArgs e)
+        {
+            ExhibitionsManagement exhibitionsManagement = new ExhibitionsManagement();
+            exhibitionsManagement.ShowDialog();
         }
     }
        
