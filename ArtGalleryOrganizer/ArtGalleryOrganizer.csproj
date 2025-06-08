@@ -53,11 +53,11 @@
     <Compile Include="Forms\ArtistsManagement.Designer.cs">
       <DependentUpon>ArtistsManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ExhibitionsManagement.cs">
+    <Compile Include="Forms\BookingManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExhibitionsManagement.Designer.cs">
-      <DependentUpon>ExhibitionsManagement.cs</DependentUpon>
+    <Compile Include="Forms\BookingManagement.Designer.cs">
+      <DependentUpon>BookingManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainScreen.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="Forms\ArtistsManagement.resx">
       <DependentUpon>ArtistsManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExhibitionsManagement.resx">
-      <DependentUpon>ExhibitionsManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BookingManagement.resx">
+      <DependentUpon>BookingManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
