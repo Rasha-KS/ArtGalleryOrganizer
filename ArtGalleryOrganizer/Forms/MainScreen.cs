@@ -47,7 +47,7 @@ namespace ArtGalleryOrganizer
 
         private void btnExhibitions_Click(object sender, EventArgs e)
         {
-            ExhibitionsManagement exhibitionsManagement = new ExhibitionsManagement();
+            BookingManagement exhibitionsManagement = new BookingManagement();
             exhibitionsManagement.ShowDialog();
         }
 

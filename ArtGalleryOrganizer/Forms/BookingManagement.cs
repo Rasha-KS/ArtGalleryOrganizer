@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ArtGalleryOrganizer
 {
-    public partial class ExhibitionsManagement : Form
+    public partial class BookingManagement : Form
     {
-        public ExhibitionsManagement()
+        public BookingManagement()
         {
             InitializeComponent();
         }

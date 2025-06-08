@@ -1,6 +1,6 @@
 ﻿namespace ArtGalleryOrganizer
 {
-    partial class ExhibitionsManagement
+    partial class BookingManagement
     {
         /// <summary>
         /// Required designer variable.
