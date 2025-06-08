@@ -37,15 +37,11 @@ namespace ArtGalleryOrganizer
             am.ShowDialog();
         }
 
-        private void btnArtworks_Click(object sender, EventArgs e)
-        {
-            ArtworksManagement artworksManagement = new ArtworksManagement();
-            artworksManagement.ShowDialog();
-        }
+      
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            Sales sales = new Sales();
+            Services sales = new Services();
             sales.ShowDialog();
         }
 

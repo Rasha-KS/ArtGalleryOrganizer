@@ -53,23 +53,11 @@
     <Compile Include="Forms\ArtistsManagement.Designer.cs">
       <DependentUpon>ArtistsManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ArtworksManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ArtworksManagement.Designer.cs">
-      <DependentUpon>ArtworksManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ExhibitionsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ExhibitionsManagement.Designer.cs">
       <DependentUpon>ExhibitionsManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainScreen.cs">
       <SubType>Form</SubType>
@@ -77,31 +65,25 @@
     <Compile Include="Forms\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Sales.cs">
+    <Compile Include="Forms\Services.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Sales.Designer.cs">
-      <DependentUpon>Sales.cs</DependentUpon>
+    <Compile Include="Forms\Services.Designer.cs">
+      <DependentUpon>Services.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ArtistsManagement.resx">
       <DependentUpon>ArtistsManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ArtworksManagement.resx">
-      <DependentUpon>ArtworksManagement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExhibitionsManagement.resx">
       <DependentUpon>ExhibitionsManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales.resx">
-      <DependentUpon>Sales.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Services.resx">
+      <DependentUpon>Services.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

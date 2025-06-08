@@ -40,9 +40,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column_ArtistName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_WorkStyle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_WorkExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -59,6 +56,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Column_ArtistName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArtistId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_WorkStyle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_WorkExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -214,6 +215,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_ArtistName,
+            this.ArtistId,
             this.Column_WorkStyle,
             this.Column_WorkExperience});
             this.dataGridView3.EnableHeadersVisualStyles = false;
@@ -228,27 +230,6 @@
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(657, 210);
             this.dataGridView3.TabIndex = 24;
-            // 
-            // Column_ArtistName
-            // 
-            this.Column_ArtistName.HeaderText = "Artist Name";
-            this.Column_ArtistName.MinimumWidth = 6;
-            this.Column_ArtistName.Name = "Column_ArtistName";
-            this.Column_ArtistName.ReadOnly = true;
-            // 
-            // Column_WorkStyle
-            // 
-            this.Column_WorkStyle.HeaderText = "Work Style ";
-            this.Column_WorkStyle.MinimumWidth = 6;
-            this.Column_WorkStyle.Name = "Column_WorkStyle";
-            this.Column_WorkStyle.ReadOnly = true;
-            // 
-            // Column_WorkExperience
-            // 
-            this.Column_WorkExperience.HeaderText = "Work Experience";
-            this.Column_WorkExperience.MinimumWidth = 6;
-            this.Column_WorkExperience.Name = "Column_WorkExperience";
-            this.Column_WorkExperience.ReadOnly = true;
             // 
             // button5
             // 
@@ -449,12 +430,42 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Nationality";
             // 
+            // Column_ArtistName
+            // 
+            this.Column_ArtistName.HeaderText = "Artist Name";
+            this.Column_ArtistName.MinimumWidth = 6;
+            this.Column_ArtistName.Name = "Column_ArtistName";
+            this.Column_ArtistName.ReadOnly = true;
+            // 
+            // ArtistId
+            // 
+            this.ArtistId.DataPropertyName = "ArtistId";
+            this.ArtistId.HeaderText = "ArtistId";
+            this.ArtistId.Name = "ArtistId";
+            this.ArtistId.ReadOnly = true;
+            this.ArtistId.Visible = false;
+            // 
+            // Column_WorkStyle
+            // 
+            this.Column_WorkStyle.HeaderText = "Work Style ";
+            this.Column_WorkStyle.MinimumWidth = 6;
+            this.Column_WorkStyle.Name = "Column_WorkStyle";
+            this.Column_WorkStyle.ReadOnly = true;
+            // 
+            // Column_WorkExperience
+            // 
+            this.Column_WorkExperience.HeaderText = "Work Experience";
+            this.Column_WorkExperience.MinimumWidth = 6;
+            this.Column_WorkExperience.Name = "Column_WorkExperience";
+            this.Column_WorkExperience.ReadOnly = true;
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Column_Name
             // 
@@ -536,13 +547,14 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_ArtistName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkStyle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkExperience;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Nationality;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_ArtistName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArtistId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkStyle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_WorkExperience;
     }
 }

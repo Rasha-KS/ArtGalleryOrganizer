@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ArtGalleryOrganizer
+namespace ArtGalleryOrganizer.Forms
 {
-    public partial class FrmLogin : Form
+    public partial class Services : Form
     {
-        public FrmLogin()
+        public Services()
         {
             InitializeComponent();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
