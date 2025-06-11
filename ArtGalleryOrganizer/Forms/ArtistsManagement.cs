@@ -9,15 +9,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ArtGalleryOrganizer
 {
 
     public partial class ArtistsManagement : Form
     {
+        //------------------------------------------------------------
+        //Artist information 
+
         BindingList<Artist> artistsList = new BindingList<Artist>();
         int selectedRowIndex = -1;
         int c = 3;
+
+        //------------------------------------------------------------
+        //Artist work Style 
+
+        List<ArtistWorkStyle> workStyleList = new List<ArtistWorkStyle>();
+        int selectedWorkStyleIndex = -1;
+       
+
+
         public ArtistsManagement()
         {
             InitializeComponent();
@@ -36,19 +49,26 @@ namespace ArtGalleryOrganizer
             r.Container = this;
         }
 
-       
+        //------------------------------------------------------------
+        //Artist information 
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= 0)
             {
-                int index = dataGridView1.CurrentRow.Index;
+                var result = MessageBox.Show("Are you sure you want to delete this work style?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int index = dataGridView1.CurrentRow.Index;
 
-                // حذف الفنان من القائمة
-                artistsList.RemoveAt(index);
-                
-                
-                LoadArtistsToGrid();
+                    // حذف الفنان من القائمة
+                    artistsList.RemoveAt(index);
+
+
+                    LoadArtistsToGrid();
+                    ClearFields();
+                }
                 ClearFields();
             }
             else
@@ -111,6 +131,27 @@ namespace ArtGalleryOrganizer
 
         }
 
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !IsValidEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Invalid email format.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                txtEmail.Focus();
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
@@ -180,6 +221,10 @@ namespace ArtGalleryOrganizer
                     row.Cells[3].Value = newArtist.Nationality;
                     row.Cells[4].Value = newArtist.Phone;
 
+                  
+                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.SelectedIndex = -1;
+
                     MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -189,6 +234,12 @@ namespace ArtGalleryOrganizer
                     newArtist.Id = c;
                     artistsList.Add(newArtist);
                     dataGridView1.Rows.Add(newArtist.Id, newArtist.Name, newArtist.Email, newArtist.Nationality, newArtist.Phone);
+                   
+                    
+                    //----------------------------------------------------------------------------------
+                    //Artist work style
+                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.SelectedIndex = -1;
 
                     MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -207,6 +258,9 @@ namespace ArtGalleryOrganizer
         private void ArtistsManagement_Load(object sender, EventArgs e)
         {
 
+            //------------------------------------------------------------
+            //Artist information 
+
             artistsList = new BindingList<Artist>(Artist.GetDefaultArtists()); 
 
             // Load into DataGridView
@@ -219,7 +273,33 @@ namespace ArtGalleryOrganizer
             c = artistsList.Max(a => a.Id);
 
 
+            //---------------------------------------------------------------------
+            //Artist Work style
+            comboBoxArtistName.Focus();
+            comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+               comboBoxArtistName.SelectedIndex = -1;
+            // Set default items in work style
+            comboBoxWorkStyle.Items.Clear();
+            comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
+            comboBoxWorkStyle.SelectedIndex = -1;
+
+           
+            // Load default work styles
+            workStyleList = ArtistWorkStyle.GetDefaultWorkStyles();
+
+            // Update comboBox data source
+            comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+            comboBoxArtistName.SelectedIndex = -1;
+
+            // Refresh both data grids
+          
+            RefreshWorkStyleGrid();       // لعرض جدول work style
+
         }
+
+        //------------------------------------------------------------
+        //Artist information 
+
         private void ClearFields()
         {
             txtName.Clear();
@@ -252,5 +332,113 @@ namespace ArtGalleryOrganizer
                 txtPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
         }
+
+        //---------------------------------------------------------------------------------------------------------
+        //ARTIST WORK STYLE
+        //---------------------------------------------------------------------------------------------------------
+        
+        
+        private void btnSaveWorkStyle_Click(object sender, EventArgs e)
+        {
+               try
+                {
+                    // Check required fields
+                    if (comboBoxArtistName.SelectedIndex == -1 ||
+                        string.IsNullOrWhiteSpace(comboBoxWorkStyle.Text) ||
+                        string.IsNullOrWhiteSpace(txtWorkExperience.Text))
+                    {
+                        MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    ArtistWorkStyle workStyle = new ArtistWorkStyle
+                    {
+                        ArtistName = comboBoxArtistName.Text,
+                        WorkStyle = comboBoxWorkStyle.Text,
+                        WorkExperience = txtWorkExperience.Text
+                    };
+
+                    
+                        // Add new
+                        workStyleList.Add(workStyle);
+                        dataGridViewWorkStyles.Rows.Add(workStyle.ArtistName, workStyle.WorkStyle, workStyle.WorkExperience);
+
+                        MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  
+
+                    ClearWorkStyleFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while saving work style: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+        }
+
+        private void RefreshWorkStyleGrid()
+        {
+            dataGridViewWorkStyles.Rows.Clear();
+
+            foreach (var workStyle in workStyleList)
+            {
+                dataGridViewWorkStyles.Rows.Add(
+                    workStyle.ArtistName,
+                    workStyle.WorkStyle,
+                    workStyle.WorkExperience
+                );
+            }
+        }
+
+
+        private void ClearWorkStyleFields()
+        {
+            comboBoxArtistName.SelectedIndex = -1;
+            comboBoxWorkStyle.SelectedIndex = -1;
+            txtWorkExperience.Clear();
+            selectedWorkStyleIndex = -1;
+            comboBoxArtistName.Focus();
+        }
+
+        private void dataGridViewWorkStyles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedWorkStyleIndex = e.RowIndex;
+               
+            }
+        }
+
+        private void btnDeleteWorkStyle_Click(object sender, EventArgs e)
+        {
+            if (selectedWorkStyleIndex >= 0 && selectedWorkStyleIndex < workStyleList.Count)
+            {
+                var result = MessageBox.Show("Are you sure you want to delete this work style?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Remove from the list
+                    workStyleList.RemoveAt(selectedWorkStyleIndex);
+
+                    // Reset selection
+                    selectedWorkStyleIndex = -1;
+
+                    // Refresh grid and clear input fields
+                    RefreshWorkStyleGrid();
+                    ClearWorkStyleFields();
+                }
+
+                ClearWorkStyleFields();
+            }
+            else
+            {
+                MessageBox.Show("Please select a work style to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnClearWorkStyle_Click(object sender, EventArgs e)
+        {
+            ClearWorkStyleFields();
+        }
+
+
     }
 }

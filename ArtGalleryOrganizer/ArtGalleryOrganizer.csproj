@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classes\Booking.cs" />
     <Compile Include="Classes\Artist.cs" />
+    <Compile Include="Classes\ArtistWorkStyle.cs" />
     <Compile Include="Classes\ResizeControls.cs" />
     <Compile Include="Forms\ArtistsManagement.cs">
       <SubType>Form</SubType>

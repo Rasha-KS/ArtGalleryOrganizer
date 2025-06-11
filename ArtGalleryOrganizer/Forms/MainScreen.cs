@@ -18,6 +18,11 @@ namespace ArtGalleryOrganizer
     {
         private void MainScreen_Load(object sender, EventArgs e)
         {
+
+
+            labelDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy - hh:mm tt");
+
+
             // بيانات تجريبية
             BindingList<Artist> artists = new BindingList<Artist>();
             artists = new BindingList<Artist>(Artist.GetDefaultArtists());
