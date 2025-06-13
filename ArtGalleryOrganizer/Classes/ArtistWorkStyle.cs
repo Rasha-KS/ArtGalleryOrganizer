@@ -21,7 +21,7 @@ namespace ArtGalleryOrganizer.Classes
 };
         }
 
-        public int ArtistId { get; set; }
+      
         public string ArtistName { get; set; }
         public string WorkStyle { get; set; }
         public string WorkExperience { get; set; }

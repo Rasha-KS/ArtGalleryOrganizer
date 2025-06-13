@@ -20,30 +20,7 @@ namespace ArtGalleryOrganizer
         {
 
 
-            labelDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy - hh:mm tt");
-
-
-            // بيانات تجريبية
-            BindingList<Artist> artists = new BindingList<Artist>();
-            artists = new BindingList<Artist>(Artist.GetDefaultArtists());
-
-
-
-            //---------------------------------------------------
-            List<Booking> bookings = new List<Booking>
-        {
-        new Booking { ArtistName = "Amira", Session = "Morning", Date = DateTime.Now, TotalHours = 3, ArtworksCount = 6 },
-        new Booking { ArtistName = "Ali", Session = "Evening", Date = DateTime.Now.AddDays(1), TotalHours = 2, ArtworksCount = 4 }
-        };
-
-           dataGridView3.DataSource = bookings;
-
-
-            // عرض الإحصائيات
-            lblArtistCount.Text = artists.Count.ToString();
-            lblBookingCount.Text = bookings.Count.ToString();
-
-
+           
         }
 
         public MainScreen()
@@ -89,7 +66,20 @@ namespace ArtGalleryOrganizer
 
         }
 
-       
+        private void MainScreen_Activated(object sender, EventArgs e)
+        {
+            lblArtistCount.Text = SharedData.Artists.Count.ToString();
+            lblBookingCount.Text = SharedData.Bookings.Count.ToString();
+
+            labelDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy - hh:mm tt");
+
+            dataGridView3.DataSource = SharedData.Bookings;
+            dataGridView3.Columns["Title"].Visible = false;
+            dataGridView3.Columns["PlusHours"].Visible = false;
+            dataGridView3.Columns["TotalPrice"].Visible = false;
+            dataGridView3.Columns["StartTime"].Visible = false;
+
+        }
     }
        
 }
