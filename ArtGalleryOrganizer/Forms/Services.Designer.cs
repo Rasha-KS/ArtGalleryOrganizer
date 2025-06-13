@@ -1,6 +1,6 @@
 ﻿namespace ArtGalleryOrganizer.Forms
 {
-    partial class Sales
+    partial class Services
     {
         /// <summary>
         /// Required designer variable.
