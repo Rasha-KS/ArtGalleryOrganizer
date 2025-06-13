@@ -50,6 +50,8 @@
     <Compile Include="Classes\Artist.cs" />
     <Compile Include="Classes\ArtistWorkStyle.cs" />
     <Compile Include="Classes\ResizeControls.cs" />
+    <Compile Include="Classes\Session.cs" />
+    <Compile Include="Classes\SharedData.cs" />
     <Compile Include="Forms\ArtistsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
