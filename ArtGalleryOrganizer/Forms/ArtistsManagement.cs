@@ -18,16 +18,12 @@ namespace ArtGalleryOrganizer
     {
         //------------------------------------------------------------
         //Artist information 
-
-        BindingList<Artist> artistsList = new BindingList<Artist>();
-        int selectedRowIndex = -1;
-        int c = 3;
+         int selectedRowIndex = -1;
+      
 
         //------------------------------------------------------------
         //Artist work Style 
-
-        List<ArtistWorkStyle> workStyleList = new List<ArtistWorkStyle>();
-        int selectedWorkStyleIndex = -1;
+         int selectedWorkStyleIndex = -1;
        
 
 
@@ -63,16 +59,22 @@ namespace ArtGalleryOrganizer
                     int index = dataGridView1.CurrentRow.Index;
 
                     // اسم الفنان المحدد
-                    string artistName = artistsList[index].Name;
+                    string artistName = SharedData.Artists[index].Name;
 
                     // حذف الفنان من القائمة
-                    artistsList.RemoveAt(index);
+                    SharedData.Artists.RemoveAt(index);
 
                     // حذف الأنماط المرتبطة بالفنان
-                    workStyleList.RemoveAll(ws => ws.ArtistName == artistName);
+                    for (int i = SharedData.ArtistWorkStyles.Count - 1; i >= 0; i--)
+                    {
+                        if (SharedData.ArtistWorkStyles[i].ArtistName == artistName)
+                        {
+                            SharedData.ArtistWorkStyles.RemoveAt(i);
+                        }
+                    }
 
                     // تحديث الكومبو بوكس
-                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
                     comboBoxArtistName.SelectedIndex = -1;
 
                     // تحديث الـ DataGrids
@@ -220,10 +222,10 @@ namespace ArtGalleryOrganizer
                 if (selectedRowIndex >= 0)
                 {
                     // Keep original ID
-                    newArtist.Id = artistsList[selectedRowIndex].Id;
+                    newArtist.Id = SharedData.Artists[selectedRowIndex].Id;
 
                     // Update the list and DataGridView
-                    artistsList[selectedRowIndex] = newArtist;
+                    SharedData.Artists[selectedRowIndex] = newArtist;
 
                     DataGridViewRow row = dataGridView1.Rows[selectedRowIndex];
                     row.Cells[0].Value = newArtist.Id;
@@ -233,7 +235,7 @@ namespace ArtGalleryOrganizer
                     row.Cells[4].Value = newArtist.Phone;
 
                   
-                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
                     comboBoxArtistName.SelectedIndex = -1;
 
                     MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,14 +244,14 @@ namespace ArtGalleryOrganizer
                 {
                     //  Original Add logic (no change here)
                  
-                    newArtist.Id = artistsList.Max(a => a.Id)+1;
-                    artistsList.Add(newArtist);
+                    newArtist.Id = SharedData.Artists.Max(a => a.Id)+1;
+                    SharedData.Artists.Add(newArtist);
                     dataGridView1.Rows.Add(newArtist.Id, newArtist.Name, newArtist.Email, newArtist.Nationality, newArtist.Phone);
                    
                     
                     //----------------------------------------------------------------------------------
                     //Artist work style
-                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
                     comboBoxArtistName.SelectedIndex = -1;
 
                     MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -272,10 +274,8 @@ namespace ArtGalleryOrganizer
             //------------------------------------------------------------
             //Artist information 
 
-            artistsList = new BindingList<Artist>(Artist.GetDefaultArtists()); 
-
             // Load into DataGridView
-            foreach (var artist in artistsList)
+            foreach (var artist in SharedData.Artists)
             {
                 dataGridView1.Rows.Add(artist.Id, artist.Name, artist.Email, artist.Nationality, artist.Phone);
             }
@@ -285,19 +285,17 @@ namespace ArtGalleryOrganizer
             //---------------------------------------------------------------------
             //Artist Work style
             comboBoxArtistName.Focus();
-            comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
             comboBoxArtistName.SelectedIndex = -1;
             // Set default items in work style
             comboBoxWorkStyle.Items.Clear();
             comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
             comboBoxWorkStyle.SelectedIndex = -1;
 
-           
-            // Load default work styles
-            workStyleList = ArtistWorkStyle.GetDefaultWorkStyles();
 
+            
             // Update comboBox data source
-            comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
             comboBoxArtistName.SelectedIndex = -1;
 
             // Refresh both data grids
@@ -317,24 +315,24 @@ namespace ArtGalleryOrganizer
             txtPhone.Clear();
             selectedRowIndex = -1;
         }
-
+/*
         private void LoadArtistsToGrid()
         {
             dataGridView1.Rows.Clear(); // نحذف الصفوف القديمة
            
-            foreach (var artist in artistsList)
+            foreach (var artist in SharedData.Artists)
             {
                 dataGridView1.Rows.Add(artist.Id, artist.Name, artist.Email, artist.Nationality, artist.Phone);
             }
 
         }
-
+*/
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 selectedRowIndex = e.RowIndex;
-                var selected = artistsList[e.RowIndex];
+                var selected = SharedData.Artists[e.RowIndex];
 
                 txtName.Text = selected.Name;
                 txtEmail.Text =selected.Email;
@@ -371,7 +369,7 @@ namespace ArtGalleryOrganizer
                 // Edit mode
                 if (selectedWorkStyleIndex >= 0)
                 {
-                    workStyleList[selectedWorkStyleIndex] = workStyle;
+                    SharedData.ArtistWorkStyles[selectedWorkStyleIndex] = workStyle;
 
                     DataGridViewRow row = dataGridViewWorkStyles.Rows[selectedWorkStyleIndex];
                     row.Cells[0].Value = workStyle.ArtistName;
@@ -385,7 +383,7 @@ namespace ArtGalleryOrganizer
                 else
                 {
                     // Add new
-                    workStyleList.Add(workStyle);
+                    SharedData.ArtistWorkStyles.Add(workStyle);
                     dataGridViewWorkStyles.Rows.Add(workStyle.ArtistName, workStyle.WorkStyle, workStyle.WorkExperience);
 
                     MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -400,11 +398,26 @@ namespace ArtGalleryOrganizer
 
         }
 
+        private void LoadArtistsToGrid()
+        {
+            // بدل تفريغ الصفوف وإضافتهم يدوياً، نربط DataGridView مباشرة مع BindingList
+            dataGridView1.DataSource = null;  // لتحديث الربط إذا كان موجود
+            dataGridView1.DataSource = SharedData.Artists;
+        }
+
         private void RefreshWorkStyleGrid()
         {
             dataGridViewWorkStyles.Rows.Clear();
+            // نفس الشيء مع قائمة أنماط العمل
+            dataGridViewWorkStyles.DataSource = null;
+            dataGridViewWorkStyles.DataSource = SharedData.ArtistWorkStyles;
+        }
 
-            foreach (var workStyle in workStyleList)
+     /*   private void RefreshWorkStyleGrid()
+        {
+            dataGridViewWorkStyles.Rows.Clear();
+
+            foreach (var workStyle in SharedData.ArtistWorkStyles)
             {
                 dataGridViewWorkStyles.Rows.Add(
                     workStyle.ArtistName,
@@ -414,7 +427,7 @@ namespace ArtGalleryOrganizer
             }
         }
 
-
+*/
         private void ClearWorkStyleFields()
         {
             comboBoxArtistName.SelectedIndex = -1;
@@ -429,7 +442,7 @@ namespace ArtGalleryOrganizer
             if (e.RowIndex >= 0)
             {
                 selectedWorkStyleIndex = e.RowIndex;
-                var selected = workStyleList[e.RowIndex];
+                var selected = SharedData.ArtistWorkStyles[e.RowIndex];
 
                 comboBoxArtistName.Text = selected.ArtistName;
                 comboBoxWorkStyle.Text = selected.WorkStyle;
@@ -439,13 +452,13 @@ namespace ArtGalleryOrganizer
 
         private void btnDeleteWorkStyle_Click(object sender, EventArgs e)
         {
-            if (selectedWorkStyleIndex >= 0 && selectedWorkStyleIndex < workStyleList.Count)
+            if (selectedWorkStyleIndex >= 0 && selectedWorkStyleIndex < SharedData.ArtistWorkStyles.Count)
             {
                 var result = MessageBox.Show("Are you sure you want to delete this work style?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     // Remove from the list
-                    workStyleList.RemoveAt(selectedWorkStyleIndex);
+                    SharedData.ArtistWorkStyles.RemoveAt(selectedWorkStyleIndex);
 
                     // Reset selection
                     selectedWorkStyleIndex = -1;
