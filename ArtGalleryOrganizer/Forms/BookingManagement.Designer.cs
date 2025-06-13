@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBookings = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArtworksCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +41,7 @@
             this.txtTotalHours = new System.Windows.Forms.TextBox();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -76,94 +68,34 @@
             // dgvBookings
             // 
             this.dgvBookings.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            this.dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBookings.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            this.dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBookings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBookings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBookings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Artist,
-            this.Title,
-            this.Date,
-            this.StartTime,
-            this.TotalHours,
-            this.TotalPrice,
-            this.ArtworksCount});
             this.dgvBookings.EnableHeadersVisualStyles = false;
             this.dgvBookings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.dgvBookings.Location = new System.Drawing.Point(21, 377);
             this.dgvBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvBookings.MultiSelect = false;
             this.dgvBookings.Name = "dgvBookings";
+            this.dgvBookings.ReadOnly = true;
             this.dgvBookings.RowHeadersVisible = false;
             this.dgvBookings.RowHeadersWidth = 51;
             this.dgvBookings.RowTemplate.Height = 26;
+            this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookings.Size = new System.Drawing.Size(839, 308);
             this.dgvBookings.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.FillWeight = 50F;
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // Artist
-            // 
-            this.Artist.DataPropertyName = "Artist";
-            this.Artist.HeaderText = "Artist";
-            this.Artist.MinimumWidth = 6;
-            this.Artist.Name = "Artist";
-            // 
-            // Title
-            // 
-            this.Title.DataPropertyName = "Title";
-            this.Title.HeaderText = "Title";
-            this.Title.Name = "Title";
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            // 
-            // StartTime
-            // 
-            this.StartTime.DataPropertyName = "StartTime";
-            this.StartTime.HeaderText = "Start Time";
-            this.StartTime.MinimumWidth = 6;
-            this.StartTime.Name = "StartTime";
-            // 
-            // TotalHours
-            // 
-            this.TotalHours.DataPropertyName = "TotalHours";
-            this.TotalHours.HeaderText = "Total Hours";
-            this.TotalHours.MinimumWidth = 6;
-            this.TotalHours.Name = "TotalHours";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "Total Price";
-            this.TotalPrice.Name = "TotalPrice";
-            // 
-            // ArtworksCount
-            // 
-            this.ArtworksCount.DataPropertyName = "ArtworksCount";
-            this.ArtworksCount.HeaderText = "Artworks Count";
-            this.ArtworksCount.MinimumWidth = 6;
-            this.ArtworksCount.Name = "ArtworksCount";
+            this.dgvBookings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookings_CellClick);
             // 
             // label1
             // 
@@ -221,6 +153,7 @@
             this.btnDeleteBooking.TabIndex = 5;
             this.btnDeleteBooking.Text = "Delete";
             this.btnDeleteBooking.UseVisualStyleBackColor = false;
+            this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
             // 
             // btnClear
             // 
@@ -234,6 +167,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtArtworksCount
             // 
@@ -270,7 +204,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtTitle);
@@ -301,16 +235,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking Management";
             // 
-            // textBox6
+            // txtTotalPrice
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox6.Location = new System.Drawing.Point(581, 119);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(227, 29);
-            this.textBox6.TabIndex = 22;
+            this.txtTotalPrice.BackColor = System.Drawing.Color.White;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.txtTotalPrice.Location = new System.Drawing.Point(581, 119);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(227, 29);
+            this.txtTotalPrice.TabIndex = 22;
             // 
             // label10
             // 
@@ -583,18 +517,10 @@
         private System.Windows.Forms.Button btnDeleteSession;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalHours;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ArtworksCount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label10;
     }
 }

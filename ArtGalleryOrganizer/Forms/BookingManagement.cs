@@ -20,8 +20,8 @@ namespace ArtGalleryOrganizer
         }
 
         ResizeControls r = new ResizeControls();
-        private List<Session> sessions;
-        private List<Booking> bookings;
+        private int selectedBookingIndex = -1;
+
 
 
 
@@ -37,18 +37,20 @@ namespace ArtGalleryOrganizer
 
         private void ExhibitionsManagement_Load(object sender, EventArgs e)
         {
-          
+            DisplayBookings();
 
-
+            cmbArtistName.DataSource = SharedData.Artists;
+            cmbArtistName.DisplayMember = "Name";
             cmbSessions.DataSource = SharedData.Sessions;
             cmbSessions.DisplayMember = "Name";
 
-            if (cmbSessions.Items.Count > 0)
-            {
-                cmbSessions.SelectedIndex = -1; 
-            }
+            cmbSessions.SelectedIndex = -1;
+            cmbArtistName.SelectedIndex = -1;
+            
+            dgvBookings.ClearSelection();
 
-
+            dgvBookings.MultiSelect = false;
+            txtTotalPrice.Text = "";
 
         }
 
@@ -58,6 +60,7 @@ namespace ArtGalleryOrganizer
             if (selectedSession != null)
             {
                 txtPrice.Text = selectedSession.sessionPrice.ToString();
+                txtTotalPrice.Text = selectedSession.sessionPrice.ToString();
             }
             else
             {
@@ -158,8 +161,15 @@ namespace ArtGalleryOrganizer
 
         private void DisplayBookings()
         {
-            dgvBookings.DataSource = null;  
-            dgvBookings.DataSource = bookings;
+
+
+            dgvBookings.DataSource = null;
+            dgvBookings.DataSource = SharedData.Bookings;
+
+            dgvBookings.Columns["Date"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvBookings.Columns["StartTime"].DefaultCellStyle.Format = "hh:mm tt";
+            dgvBookings.Columns["TotalPrice"].DefaultCellStyle.Format = "N0";
+     
         }
 
         private void btnSaveBooking_Click(object sender, EventArgs e)
@@ -171,14 +181,14 @@ namespace ArtGalleryOrganizer
             string sessionName = cmbSessions.Text.Trim();
             string title = txtTitle.Text.Trim();
             double plusHours = Convert.ToDouble(txtPlusHours.Text);
-            double totalHours = Convert.ToDouble(txtPlusHours.Text);
+            double totalHours = Convert.ToDouble(txtTotalHours.Text);
             DateTime startTime = dtpTime.Value;
             DateTime bookingDate = dtpBookingDate.Value;
             int artworksCount = Convert.ToInt32(txtArtworksCount.Text);
 
 
             // البحث عن سعر القسم من قائمة الاقسام
-            var session = sessions.FirstOrDefault(s => s.Name == sessionName);
+            var session = SharedData.Sessions.FirstOrDefault(s => s.Name == sessionName);
             if (session == null)
             {
                 MessageBox.Show("Session not exist!");
@@ -188,25 +198,24 @@ namespace ArtGalleryOrganizer
             double totalPrice = new Booking().CalculateTotalPrice(session.sessionPrice, plusHours);
 
 
-            // تحقق هل هناك صف محدد للتعديل
-            if (dgvBookings.CurrentRow != null && dgvBookings.CurrentRow.Index >= 0)
+            if (selectedBookingIndex >= 0 && selectedBookingIndex < SharedData.Bookings.Count)
             {
-                // تحديث الحجز الموجود
-                int index = dgvBookings.CurrentRow.Index;
-                bookings[index].ArtistName = artistName;
-                bookings[index].Session = sessionName;
-                bookings[index].Date = bookingDate;
-                bookings[index].TotalHours = totalHours;
-                bookings[index].PlusHours = plusHours;
-                bookings[index].ArtworksCount = artworksCount;
-                bookings[index].Title = title;
-                bookings[index].StartTime = startTime;
-                bookings[index].TotalPrice = totalPrice;
+                // تعديل
+                var booking = SharedData.Bookings[selectedBookingIndex];
+                booking.ArtistName = artistName;
+                booking.Session = sessionName;
+                booking.Date = bookingDate;
+                booking.TotalHours = totalHours;
+                booking.PlusHours = plusHours;
+                booking.ArtworksCount = artworksCount;
+                booking.Title = title;
+                booking.StartTime = startTime;
+                booking.TotalPrice = totalPrice;
             }
             else
             {
-                // إضافة حجز جديد
-                bookings.Add(new Booking
+                // إضافة
+                SharedData.Bookings.Add(new Booking
                 {
                     ArtistName = artistName,
                     Session = sessionName,
@@ -221,7 +230,8 @@ namespace ArtGalleryOrganizer
             }
 
             DisplayBookings();
-            MessageBox.Show("Booking saved successfully!");
+            MessageBox.Show("Booking saved successfully! Total bookings: " + SharedData.Bookings.Count);
+            btnClear.PerformClick();
 
         }
 
@@ -230,8 +240,10 @@ namespace ArtGalleryOrganizer
         {
             cmbArtistName.SelectedIndex = -1;
             cmbSessions.SelectedIndex = -1;
+            cmbArtistName.Text = "";
             txtTotalHours.Clear();
-            txtPlusHours.Clear();
+            txtPlusHours.Text = "0";
+            txtTotalPrice.Clear();
             txtArtworksCount.Clear();
             txtTitle.Clear();
             dtpBookingDate.Value = DateTime.Today;
@@ -295,5 +307,57 @@ namespace ArtGalleryOrganizer
             return true; // All validations passed
         }
 
+        private void btnDeleteBooking_Click(object sender, EventArgs e)
+        {
+            if (!(selectedBookingIndex >= 0 && selectedBookingIndex < SharedData.Bookings.Count))
+            {
+                MessageBox.Show("Please select a booking to delete.");
+                return;
+            }
+
+            var removed = SharedData.Bookings[selectedBookingIndex];
+
+            var confirmResult = MessageBox.Show(
+                $"Are you sure you want to delete the booking for \"{removed.ArtistName}\"?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                SharedData.Bookings.RemoveAt(selectedBookingIndex);
+                DisplayBookings();
+                btnClear_Click(sender, e); // نمسح الحقول بعد الحذف
+            }
+        }
+
+        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedBooking = SharedData.Bookings[e.RowIndex];
+                selectedBookingIndex = e.RowIndex;
+
+                cmbArtistName.Text = selectedBooking.ArtistName;
+                cmbSessions.Text = selectedBooking.Session;
+                txtTotalHours.Text = selectedBooking.TotalHours.ToString();
+                txtPlusHours.Text = selectedBooking.PlusHours.ToString();
+                txtArtworksCount.Text = selectedBooking.ArtworksCount.ToString();
+                txtTitle.Text = selectedBooking.Title;
+                dtpBookingDate.Value = selectedBooking.Date;
+                dtpTime.Value = selectedBooking.StartTime;
+                txtTotalPrice.Text = selectedBooking.TotalPrice.ToString();
+
+                // إعادة تعيين لون كل الصفوف
+                foreach (DataGridViewRow row in dgvBookings.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                }
+
+                // تلوين الصف المحدد
+                dgvBookings.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+
+            }
+        }
     }
 }
