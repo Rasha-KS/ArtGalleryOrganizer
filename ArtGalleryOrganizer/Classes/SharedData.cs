@@ -15,5 +15,6 @@ namespace ArtGalleryOrganizer.Classes
         public static BindingList<ArtistWorkStyle> ArtistWorkStyles = new BindingList<ArtistWorkStyle>(ArtistWorkStyle.GetDefaultWorkStyles());
         public static BindingList<Session> Sessions = new BindingList<Session>(Session.GetDefaultSessions());
         public static BindingList<Booking> Bookings = new BindingList<Booking>(Booking.GetDefaultBookings());
+   
     }
 }

@@ -23,7 +23,10 @@ namespace ArtGalleryOrganizer.Classes
         {
             new Session("A1", 6000),
             new Session("A2", 4500),
-            new Session("B1", 3150)
+            new Session("B1", 3150),
+            new Session("C1", 2500),
+            new Session("D1", 1500),
+            new Session("D2", 1000)
         };
         }
 

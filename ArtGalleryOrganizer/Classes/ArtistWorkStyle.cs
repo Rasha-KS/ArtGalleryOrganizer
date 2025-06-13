@@ -11,12 +11,14 @@ namespace ArtGalleryOrganizer.Classes
 
         public static List<ArtistWorkStyle> GetDefaultWorkStyles()
         {
-            return new List<ArtistWorkStyle>
-             {
-        new ArtistWorkStyle { ArtistName = "Sarah Ali", WorkStyle = "Impressionism", WorkExperience = "5 years" },
-        new ArtistWorkStyle { ArtistName = "Omar Yassin", WorkStyle = "Realism", WorkExperience = "7 years" },
-        new ArtistWorkStyle { ArtistName = "Lina Hariri", WorkStyle = "Abstract", WorkExperience = "3 years" }
-              };
+            return new List<ArtistWorkStyle> {
+    new ArtistWorkStyle { ArtistName = "Sarah Ali", WorkStyle = "Impressionism", WorkExperience = "5 years" },
+    new ArtistWorkStyle { ArtistName = "Omar Yassin", WorkStyle = "Realism", WorkExperience = "7 years" },
+    new ArtistWorkStyle { ArtistName = "Lina Hassan", WorkStyle = "Abstract", WorkExperience = "4 years" },
+    new ArtistWorkStyle { ArtistName = "Khaled Mansour", WorkStyle = "Surrealism", WorkExperience = "6 years" },
+    new ArtistWorkStyle { ArtistName = "Maya Nabil", WorkStyle = "Impressionism", WorkExperience = "3 years" },
+    new ArtistWorkStyle { ArtistName = "Youssef Abdel", WorkStyle = "Realism", WorkExperience = "5 years" }
+};
         }
 
         public int ArtistId { get; set; }

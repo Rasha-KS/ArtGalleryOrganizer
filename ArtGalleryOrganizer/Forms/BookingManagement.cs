@@ -162,7 +162,6 @@ namespace ArtGalleryOrganizer
         private void DisplayBookings()
         {
 
-
             dgvBookings.DataSource = null;
             dgvBookings.DataSource = SharedData.Bookings;
 
