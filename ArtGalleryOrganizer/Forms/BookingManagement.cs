@@ -248,6 +248,9 @@ namespace ArtGalleryOrganizer
             dtpBookingDate.Value = DateTime.Today;
             dtpTime.Value = DateTime.Now;
             dgvBookings.ClearSelection();
+            selectedBookingIndex = -1;
+
+
         }
 
 
@@ -353,9 +356,7 @@ namespace ArtGalleryOrganizer
                     row.DefaultCellStyle.BackColor = Color.White;
                 }
 
-                // تلوين الصف المحدد
-                dgvBookings.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
-
+              
             }
         }
     }
