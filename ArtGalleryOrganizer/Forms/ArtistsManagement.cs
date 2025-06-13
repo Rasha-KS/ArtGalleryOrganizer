@@ -57,19 +57,30 @@ namespace ArtGalleryOrganizer
         {
             if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= 0)
             {
-                var result = MessageBox.Show("Are you sure you want to delete this work style?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Are you sure you want to delete this artist and related work styles?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     int index = dataGridView1.CurrentRow.Index;
 
+                    // اسم الفنان المحدد
+                    string artistName = artistsList[index].Name;
+
                     // حذف الفنان من القائمة
                     artistsList.RemoveAt(index);
 
+                    // حذف الأنماط المرتبطة بالفنان
+                    workStyleList.RemoveAll(ws => ws.ArtistName == artistName);
 
+                    // تحديث الكومبو بوكس
+                    comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
+                    comboBoxArtistName.SelectedIndex = -1;
+
+                    // تحديث الـ DataGrids
                     LoadArtistsToGrid();
+                    RefreshWorkStyleGrid();
                     ClearFields();
+
                 }
-                ClearFields();
             }
             else
             {
@@ -230,8 +241,8 @@ namespace ArtGalleryOrganizer
                 else
                 {
                     //  Original Add logic (no change here)
-                    c = c + 1;
-                    newArtist.Id = c;
+                 
+                    newArtist.Id = artistsList.Max(a => a.Id)+1;
                     artistsList.Add(newArtist);
                     dataGridView1.Rows.Add(newArtist.Id, newArtist.Name, newArtist.Email, newArtist.Nationality, newArtist.Phone);
                    
@@ -269,8 +280,6 @@ namespace ArtGalleryOrganizer
                 dataGridView1.Rows.Add(artist.Id, artist.Name, artist.Email, artist.Nationality, artist.Phone);
             }
 
-            // Set 'c' to the last ID
-            c = artistsList.Max(a => a.Id);
 
 
             //---------------------------------------------------------------------
@@ -325,11 +334,12 @@ namespace ArtGalleryOrganizer
             if (e.RowIndex >= 0)
             {
                 selectedRowIndex = e.RowIndex;
+                var selected = artistsList[e.RowIndex];
 
-                txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtNationality.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtName.Text = selected.Name;
+                txtEmail.Text =selected.Email;
+                txtNationality.Text = selected.Nationality;
+                txtPhone.Text = selected.Phone;
             }
         }
 
