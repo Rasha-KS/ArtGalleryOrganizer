@@ -277,7 +277,7 @@ namespace ArtGalleryOrganizer
             //Artist Work style
             comboBoxArtistName.Focus();
             comboBoxArtistName.DataSource = artistsList.Select(a => a.Name).ToList();
-               comboBoxArtistName.SelectedIndex = -1;
+            comboBoxArtistName.SelectedIndex = -1;
             // Set default items in work style
             comboBoxWorkStyle.Items.Clear();
             comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
@@ -340,39 +340,54 @@ namespace ArtGalleryOrganizer
         
         private void btnSaveWorkStyle_Click(object sender, EventArgs e)
         {
-               try
+            try
+            {
+                // Check required fields
+                if (comboBoxArtistName.SelectedIndex == -1 ||
+                    string.IsNullOrWhiteSpace(comboBoxWorkStyle.Text) ||
+                    string.IsNullOrWhiteSpace(txtWorkExperience.Text))
                 {
-                    // Check required fields
-                    if (comboBoxArtistName.SelectedIndex == -1 ||
-                        string.IsNullOrWhiteSpace(comboBoxWorkStyle.Text) ||
-                        string.IsNullOrWhiteSpace(txtWorkExperience.Text))
-                    {
-                        MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    ArtistWorkStyle workStyle = new ArtistWorkStyle
-                    {
-                        ArtistName = comboBoxArtistName.Text,
-                        WorkStyle = comboBoxWorkStyle.Text,
-                        WorkExperience = txtWorkExperience.Text
-                    };
-
-                    
-                        // Add new
-                        workStyleList.Add(workStyle);
-                        dataGridViewWorkStyles.Rows.Add(workStyle.ArtistName, workStyle.WorkStyle, workStyle.WorkExperience);
-
-                        MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  
-
-                    ClearWorkStyleFields();
+                    MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                catch (Exception ex)
+
+                ArtistWorkStyle workStyle = new ArtistWorkStyle
                 {
-                    MessageBox.Show("Error while saving work style: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ArtistName = comboBoxArtistName.Text,
+                    WorkStyle = comboBoxWorkStyle.Text,
+                    WorkExperience = txtWorkExperience.Text
+                };
+
+                // Edit mode
+                if (selectedWorkStyleIndex >= 0)
+                {
+                    workStyleList[selectedWorkStyleIndex] = workStyle;
+
+                    DataGridViewRow row = dataGridViewWorkStyles.Rows[selectedWorkStyleIndex];
+                    row.Cells[0].Value = workStyle.ArtistName;
+                    row.Cells[1].Value = workStyle.WorkStyle;
+                    row.Cells[2].Value = workStyle.WorkExperience;
+
+                    MessageBox.Show("Work style updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    selectedWorkStyleIndex = -1;
                 }
-            
+                else
+                {
+                    // Add new
+                    workStyleList.Add(workStyle);
+                    dataGridViewWorkStyles.Rows.Add(workStyle.ArtistName, workStyle.WorkStyle, workStyle.WorkExperience);
+
+                    MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                ClearWorkStyleFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving work style: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void RefreshWorkStyleGrid()
@@ -404,7 +419,11 @@ namespace ArtGalleryOrganizer
             if (e.RowIndex >= 0)
             {
                 selectedWorkStyleIndex = e.RowIndex;
-               
+                var selected = workStyleList[e.RowIndex];
+
+                comboBoxArtistName.Text = selected.ArtistName;
+                comboBoxWorkStyle.Text = selected.WorkStyle;
+                txtWorkExperience.Text = selected.WorkExperience;
             }
         }
 
