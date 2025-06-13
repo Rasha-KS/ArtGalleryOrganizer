@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace ArtGalleryOrganizer.Forms
 {
-    public partial class Services : Form
+    public partial class Sales : Form
     {
-        public Services()
+        public Sales()
         {
             InitializeComponent();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Services_Load(object sender, EventArgs e)
         {
 
         }

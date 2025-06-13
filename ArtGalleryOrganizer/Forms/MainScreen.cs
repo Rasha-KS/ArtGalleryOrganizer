@@ -51,7 +51,7 @@ namespace ArtGalleryOrganizer
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            Services sales = new Services();
+            Sales sales = new Sales();
             sales.ShowDialog();
         }
 
