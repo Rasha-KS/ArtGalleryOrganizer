@@ -211,6 +211,7 @@ namespace ArtGalleryOrganizer
                 booking.Title = title;
                 booking.StartTime = startTime;
                 booking.TotalPrice = totalPrice;
+
             }
             else
             {

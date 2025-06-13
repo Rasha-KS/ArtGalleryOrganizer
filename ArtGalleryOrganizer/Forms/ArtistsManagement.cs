@@ -74,8 +74,7 @@ namespace ArtGalleryOrganizer
                     }
 
                     // تحديث الكومبو بوكس
-                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-                    comboBoxArtistName.SelectedIndex = -1;
+                    refreshcomboArtistName();
 
                     // تحديث الـ DataGrids
                     LoadArtistsToGrid();
@@ -221,6 +220,9 @@ namespace ArtGalleryOrganizer
                 // Check if we're editing an existing row
                 if (selectedRowIndex >= 0)
                 {
+                    string oldArtistName = SharedData.Artists[selectedRowIndex].Name;
+                    string newArtistName = txtName.Text;
+
                     // Keep original ID
                     newArtist.Id = SharedData.Artists[selectedRowIndex].Id;
 
@@ -234,9 +236,18 @@ namespace ArtGalleryOrganizer
                     row.Cells[3].Value = newArtist.Nationality;
                     row.Cells[4].Value = newArtist.Phone;
 
-                  
-                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-                    comboBoxArtistName.SelectedIndex = -1;
+
+                    for (int i = 0; i < SharedData.ArtistWorkStyles.Count; i++)
+                    {
+                        if (SharedData.ArtistWorkStyles[i].ArtistName == oldArtistName)
+                        {
+                            SharedData.ArtistWorkStyles[i].ArtistName = newArtistName;
+                        }
+                    }
+
+
+                    RefreshWorkStyleGrid();
+                    refreshcomboArtistName();
 
                     MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -246,13 +257,11 @@ namespace ArtGalleryOrganizer
                  
                     newArtist.Id = SharedData.Artists.Max(a => a.Id)+1;
                     SharedData.Artists.Add(newArtist);
-                    dataGridView1.Rows.Add(newArtist.Id, newArtist.Name, newArtist.Email, newArtist.Nationality, newArtist.Phone);
-                   
-                    
+                    LoadArtistsToGrid();
+
                     //----------------------------------------------------------------------------------
                     //Artist work style
-                    comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-                    comboBoxArtistName.SelectedIndex = -1;
+                    refreshcomboArtistName();
 
                     MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -275,28 +284,17 @@ namespace ArtGalleryOrganizer
             //Artist information 
 
             // Load into DataGridView
-            foreach (var artist in SharedData.Artists)
-            {
-                dataGridView1.Rows.Add(artist.Id, artist.Name, artist.Email, artist.Nationality, artist.Phone);
-            }
-
+          LoadArtistsToGrid();
 
 
             //---------------------------------------------------------------------
             //Artist Work style
-            comboBoxArtistName.Focus();
-            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-            comboBoxArtistName.SelectedIndex = -1;
-            // Set default items in work style
+            refreshcomboArtistName();
+               // Set default items in work style
             comboBoxWorkStyle.Items.Clear();
             comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
             comboBoxWorkStyle.SelectedIndex = -1;
 
-
-            
-            // Update comboBox data source
-            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-            comboBoxArtistName.SelectedIndex = -1;
 
             // Refresh both data grids
           
@@ -306,34 +304,13 @@ namespace ArtGalleryOrganizer
 
         //------------------------------------------------------------
         //Artist information 
-
-        private void ClearFields()
-        {
-            txtName.Clear();
-            txtEmail.Clear();
-            txtNationality.Clear();
-            txtPhone.Clear();
-            selectedRowIndex = -1;
-        }
-/*
-        private void LoadArtistsToGrid()
-        {
-            dataGridView1.Rows.Clear(); // نحذف الصفوف القديمة
-           
-            foreach (var artist in SharedData.Artists)
-            {
-                dataGridView1.Rows.Add(artist.Id, artist.Name, artist.Email, artist.Nationality, artist.Phone);
-            }
-
-        }
-*/
+      
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 selectedRowIndex = e.RowIndex;
                 var selected = SharedData.Artists[e.RowIndex];
-
                 txtName.Text = selected.Name;
                 txtEmail.Text =selected.Email;
                 txtNationality.Text = selected.Nationality;
@@ -352,7 +329,7 @@ namespace ArtGalleryOrganizer
             {
                 // Check required fields
                 if (comboBoxArtistName.SelectedIndex == -1 ||
-                    string.IsNullOrWhiteSpace(comboBoxWorkStyle.Text) ||
+                       comboBoxWorkStyle.SelectedIndex == -1 ||
                     string.IsNullOrWhiteSpace(txtWorkExperience.Text))
                 {
                     MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -384,7 +361,7 @@ namespace ArtGalleryOrganizer
                 {
                     // Add new
                     SharedData.ArtistWorkStyles.Add(workStyle);
-                    dataGridViewWorkStyles.Rows.Add(workStyle.ArtistName, workStyle.WorkStyle, workStyle.WorkExperience);
+                    RefreshWorkStyleGrid();
 
                     MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -398,6 +375,23 @@ namespace ArtGalleryOrganizer
 
         }
 
+        private void refreshcomboArtistName()
+        {
+            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
+            comboBoxArtistName.SelectedIndex = -1;
+
+        }
+
+
+        private void ClearFields()
+        {
+            txtName.Clear();
+            txtEmail.Clear();
+            txtNationality.Clear();
+            txtPhone.Clear();
+            selectedRowIndex = -1;
+        }
+
         private void LoadArtistsToGrid()
         {
             // بدل تفريغ الصفوف وإضافتهم يدوياً، نربط DataGridView مباشرة مع BindingList
@@ -407,27 +401,13 @@ namespace ArtGalleryOrganizer
 
         private void RefreshWorkStyleGrid()
         {
-            dataGridViewWorkStyles.Rows.Clear();
+           
             // نفس الشيء مع قائمة أنماط العمل
             dataGridViewWorkStyles.DataSource = null;
             dataGridViewWorkStyles.DataSource = SharedData.ArtistWorkStyles;
         }
 
-     /*   private void RefreshWorkStyleGrid()
-        {
-            dataGridViewWorkStyles.Rows.Clear();
-
-            foreach (var workStyle in SharedData.ArtistWorkStyles)
-            {
-                dataGridViewWorkStyles.Rows.Add(
-                    workStyle.ArtistName,
-                    workStyle.WorkStyle,
-                    workStyle.WorkExperience
-                );
-            }
-        }
-
-*/
+    
         private void ClearWorkStyleFields()
         {
             comboBoxArtistName.SelectedIndex = -1;
@@ -466,6 +446,7 @@ namespace ArtGalleryOrganizer
                     // Refresh grid and clear input fields
                     RefreshWorkStyleGrid();
                     ClearWorkStyleFields();
+
                 }
 
                 ClearWorkStyleFields();
