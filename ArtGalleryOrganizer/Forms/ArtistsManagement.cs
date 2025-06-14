@@ -284,8 +284,8 @@ namespace ArtGalleryOrganizer
             //Artist information 
 
             // Load into DataGridView
-          LoadArtistsToGrid();
-
+              LoadArtistsToGrid();
+              dataGridView1.ClearSelection();
 
             //---------------------------------------------------------------------
             //Artist Work style
@@ -294,7 +294,7 @@ namespace ArtGalleryOrganizer
             comboBoxWorkStyle.Items.Clear();
             comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
             comboBoxWorkStyle.SelectedIndex = -1;
-
+            dataGridViewWorkStyles.ClearSelection();
 
             // Refresh both data grids
           
@@ -390,6 +390,7 @@ namespace ArtGalleryOrganizer
             txtNationality.Clear();
             txtPhone.Clear();
             selectedRowIndex = -1;
+            dataGridView1.ClearSelection();
         }
 
         private void LoadArtistsToGrid()
@@ -415,6 +416,7 @@ namespace ArtGalleryOrganizer
             txtWorkExperience.Clear();
             selectedWorkStyleIndex = -1;
             comboBoxArtistName.Focus();
+            dataGridViewWorkStyles.ClearSelection();
         }
 
         private void dataGridViewWorkStyles_CellClick(object sender, DataGridViewCellEventArgs e)
