@@ -28,49 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.chkPhotographer = new System.Windows.Forms.CheckBox();
+            this.chkGuidedTour = new System.Windows.Forms.CheckBox();
+            this.chkAdditionalSpace = new System.Windows.Forms.CheckBox();
+            this.chkCafeCorner = new System.Windows.Forms.CheckBox();
+            this.chkOpenBuffet = new System.Windows.Forms.CheckBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.cmbTitle = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cmbArtistName = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ArtistName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tilte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OpenBuffet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CafeCorner = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GuidedTours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdditionalSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Photographer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSales = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.chkPhotographer);
+            this.groupBox2.Controls.Add(this.chkGuidedTour);
+            this.groupBox2.Controls.Add(this.chkAdditionalSpace);
+            this.groupBox2.Controls.Add(this.chkCafeCorner);
+            this.groupBox2.Controls.Add(this.chkOpenBuffet);
+            this.groupBox2.Controls.Add(this.btnClear);
+            this.groupBox2.Controls.Add(this.cmbTitle);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.cmbArtistName);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,156 +72,141 @@
             this.groupBox2.Size = new System.Drawing.Size(483, 428);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sales";
+            this.groupBox2.Text = "Services";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // checkBox5
+            // chkPhotographer
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(244, 212);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(142, 26);
-            this.checkBox5.TabIndex = 34;
-            this.checkBox5.Text = "Photographer";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkPhotographer.AutoSize = true;
+            this.chkPhotographer.Location = new System.Drawing.Point(257, 235);
+            this.chkPhotographer.Name = "chkPhotographer";
+            this.chkPhotographer.Size = new System.Drawing.Size(142, 26);
+            this.chkPhotographer.TabIndex = 34;
+            this.chkPhotographer.Text = "Photographer";
+            this.chkPhotographer.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkGuidedTour
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(321, 164);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(140, 26);
-            this.checkBox4.TabIndex = 33;
-            this.checkBox4.Text = "Guided Tours";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkGuidedTour.AutoSize = true;
+            this.chkGuidedTour.Location = new System.Drawing.Point(328, 164);
+            this.chkGuidedTour.Name = "chkGuidedTour";
+            this.chkGuidedTour.Size = new System.Drawing.Size(140, 26);
+            this.chkGuidedTour.TabIndex = 33;
+            this.chkGuidedTour.Text = "Guided Tours";
+            this.chkGuidedTour.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkAdditionalSpace
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(57, 212);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(167, 26);
-            this.checkBox3.TabIndex = 32;
-            this.checkBox3.Text = "Additional Space";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkAdditionalSpace.AutoSize = true;
+            this.chkAdditionalSpace.Location = new System.Drawing.Point(58, 235);
+            this.chkAdditionalSpace.Name = "chkAdditionalSpace";
+            this.chkAdditionalSpace.Size = new System.Drawing.Size(167, 26);
+            this.chkAdditionalSpace.TabIndex = 32;
+            this.chkAdditionalSpace.Text = "Additional Space";
+            this.chkAdditionalSpace.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkCafeCorner
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(173, 164);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(132, 26);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.Text = "Cafe Corner";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkCafeCorner.AutoSize = true;
+            this.chkCafeCorner.Location = new System.Drawing.Point(182, 164);
+            this.chkCafeCorner.Name = "chkCafeCorner";
+            this.chkCafeCorner.Size = new System.Drawing.Size(132, 26);
+            this.chkCafeCorner.TabIndex = 31;
+            this.chkCafeCorner.Text = "Cafe Corner";
+            this.chkCafeCorner.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkOpenBuffet
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(34, 164);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 26);
-            this.checkBox1.TabIndex = 30;
-            this.checkBox1.Text = "Open Buffet ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkOpenBuffet.AutoSize = true;
+            this.chkOpenBuffet.Location = new System.Drawing.Point(22, 164);
+            this.chkOpenBuffet.Name = "chkOpenBuffet";
+            this.chkOpenBuffet.Size = new System.Drawing.Size(128, 26);
+            this.chkOpenBuffet.TabIndex = 30;
+            this.chkOpenBuffet.Text = "Open Buffet";
+            this.chkOpenBuffet.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnClear
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(53, 279);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 31);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Total Price";
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.btnClear.Location = new System.Drawing.Point(134, 362);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(192, 38);
+            this.btnClear.TabIndex = 27;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button1
+            // cmbTitle
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.button1.Location = new System.Drawing.Point(134, 375);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 38);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.White;
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbTitle.BackColor = System.Drawing.Color.White;
+            this.cmbTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTitle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.cmbTitle.FormattingEnabled = true;
+            this.cmbTitle.Items.AddRange(new object[] {
             "A1",
             "A2",
             "B1",
             "C1",
             "D1",
             "D2"});
-            this.comboBox4.Location = new System.Drawing.Point(207, 93);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(217, 30);
-            this.comboBox4.TabIndex = 26;
+            this.cmbTitle.Location = new System.Drawing.Point(207, 93);
+            this.cmbTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTitle.Name = "cmbTitle";
+            this.cmbTitle.Size = new System.Drawing.Size(217, 30);
+            this.cmbTitle.TabIndex = 26;
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.button5.Location = new System.Drawing.Point(244, 327);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(192, 38);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.btnDelete.Location = new System.Drawing.Point(247, 304);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(192, 38);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button7
+            // btnSave
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.button7.Location = new System.Drawing.Point(39, 327);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(192, 38);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "Save";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.btnSave.Location = new System.Drawing.Point(33, 304);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(192, 38);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox5
+            // cmbArtistName
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBox5.Location = new System.Drawing.Point(207, 276);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(217, 29);
-            this.textBox5.TabIndex = 25;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.White;
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbArtistName.BackColor = System.Drawing.Color.White;
+            this.cmbArtistName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArtistName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbArtistName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.cmbArtistName.FormattingEnabled = true;
+            this.cmbArtistName.Items.AddRange(new object[] {
             "A1",
             "A2",
             "B1",
             "C1",
             "D1",
             "D2"});
-            this.comboBox3.Location = new System.Drawing.Point(207, 48);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(217, 30);
-            this.comboBox3.TabIndex = 24;
+            this.cmbArtistName.Location = new System.Drawing.Point(207, 48);
+            this.cmbArtistName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbArtistName.Name = "cmbArtistName";
+            this.cmbArtistName.Size = new System.Drawing.Size(217, 30);
+            this.cmbArtistName.TabIndex = 24;
+            this.cmbArtistName.SelectedIndexChanged += new System.EventHandler(this.cmbArtistName_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -253,88 +228,45 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Artist Name";
             // 
-            // dataGridView1
+            // dgvSales
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ArtistName,
-            this.Tilte,
-            this.OpenBuffet,
-            this.CafeCorner,
-            this.GuidedTours,
-            this.AdditionalSpace,
-            this.Photographer});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.dataGridView1.Location = new System.Drawing.Point(530, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 26;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 419);
-            this.dataGridView1.TabIndex = 33;
-            // 
-            // ArtistName
-            // 
-            this.ArtistName.DataPropertyName = "ArtistName";
-            this.ArtistName.FillWeight = 120F;
-            this.ArtistName.HeaderText = "Artist Name";
-            this.ArtistName.Name = "ArtistName";
-            // 
-            // Tilte
-            // 
-            this.Tilte.DataPropertyName = "Title";
-            this.Tilte.FillWeight = 130F;
-            this.Tilte.HeaderText = "Title";
-            this.Tilte.MinimumWidth = 6;
-            this.Tilte.Name = "Tilte";
-            // 
-            // OpenBuffet
-            // 
-            this.OpenBuffet.DataPropertyName = "OpenBuffet";
-            this.OpenBuffet.HeaderText = "Open Buffet";
-            this.OpenBuffet.MinimumWidth = 6;
-            this.OpenBuffet.Name = "OpenBuffet";
-            // 
-            // CafeCorner
-            // 
-            this.CafeCorner.DataPropertyName = "CafeCorner";
-            this.CafeCorner.FillWeight = 110F;
-            this.CafeCorner.HeaderText = "Cafe Corner";
-            this.CafeCorner.MinimumWidth = 6;
-            this.CafeCorner.Name = "CafeCorner";
-            // 
-            // GuidedTours
-            // 
-            this.GuidedTours.DataPropertyName = "GuidedTours";
-            this.GuidedTours.HeaderText = "Guided Tours";
-            this.GuidedTours.Name = "GuidedTours";
-            // 
-            // AdditionalSpace
-            // 
-            this.AdditionalSpace.DataPropertyName = "AdditionalSpace";
-            this.AdditionalSpace.HeaderText = "Additional Space";
-            this.AdditionalSpace.Name = "AdditionalSpace";
-            // 
-            // Photographer
-            // 
-            this.Photographer.DataPropertyName = "Photographer";
-            this.Photographer.HeaderText = "Photographer";
-            this.Photographer.Name = "Photographer";
+            this.dgvSales.AllowUserToAddRows = false;
+            this.dgvSales.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            this.dgvSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSales.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSales.EnableHeadersVisualStyles = false;
+            this.dgvSales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.dgvSales.Location = new System.Drawing.Point(530, 35);
+            this.dgvSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvSales.MultiSelect = false;
+            this.dgvSales.Name = "dgvSales";
+            this.dgvSales.ReadOnly = true;
+            this.dgvSales.RowHeadersVisible = false;
+            this.dgvSales.RowHeadersWidth = 51;
+            this.dgvSales.RowTemplate.Height = 26;
+            this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSales.Size = new System.Drawing.Size(556, 419);
+            this.dgvSales.TabIndex = 33;
+            this.dgvSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellClick);
             // 
             // Services
             // 
@@ -342,16 +274,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.ClientSize = new System.Drawing.Size(1119, 480);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Services";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sales";
+            this.Text = "Services";
             this.Load += new System.EventHandler(this.Services_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,27 +291,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbTitle;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cmbArtistName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ArtistName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tilte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpenBuffet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CafeCorner;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GuidedTours;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdditionalSpace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Photographer;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridView dgvSales;
+        private System.Windows.Forms.CheckBox chkPhotographer;
+        private System.Windows.Forms.CheckBox chkGuidedTour;
+        private System.Windows.Forms.CheckBox chkAdditionalSpace;
+        private System.Windows.Forms.CheckBox chkCafeCorner;
+        private System.Windows.Forms.CheckBox chkOpenBuffet;
     }
 }
