@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,24 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.Color.White;
-            this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtPhone.Location = new System.Drawing.Point(155, 190);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPhone.MaxLength = 10;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(207, 32);
-            this.txtPhone.TabIndex = 30;
             // 
             // txtNationality
             // 
@@ -73,9 +61,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.label5.Location = new System.Drawing.Point(22, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 41);
+            this.label5.Size = new System.Drawing.Size(84, 41);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Phone";
+            this.label5.Text = "Capacity";
             // 
             // label1
             // 
@@ -85,7 +73,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 37);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Artist Name";
+            this.label1.Text = "Hall Name";
             // 
             // label4
             // 
@@ -95,7 +83,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 32);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Email";
+            this.label4.Text = "Price";
             // 
             // txtEmail
             // 
@@ -116,7 +104,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 32);
             this.label3.TabIndex = 25;
-            this.label3.Text = "NationalID";
+            this.label3.Text = "Status";
             // 
             // comboBox1
             // 
@@ -129,12 +117,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.txtNationality);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
@@ -147,31 +135,17 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
-            // btnClear
+            // comboBox2
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnClear.Location = new System.Drawing.Point(22, 306);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(148, 38);
-            this.btnClear.TabIndex = 36;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.button1.Location = new System.Drawing.Point(205, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 38);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = false;
+            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Available",
+            "Maintenance"});
+            this.comboBox2.Location = new System.Drawing.Point(155, 190);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(207, 31);
+            this.comboBox2.TabIndex = 40;
             // 
             // button2
             // 
@@ -199,6 +173,33 @@
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.button1.Location = new System.Drawing.Point(205, 306);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 38);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.btnClear.Location = new System.Drawing.Point(22, 306);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(148, 38);
+            this.btnClear.TabIndex = 36;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
             // HallManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +209,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HallManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HallManagement";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -216,7 +218,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtNationality;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -229,5 +230,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

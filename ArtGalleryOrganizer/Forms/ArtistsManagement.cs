@@ -73,12 +73,8 @@ namespace ArtGalleryOrganizer
                         }
                     }
 
-                    // تحديث الكومبو بوكس
-                    refreshcomboArtistName();
-
                     // تحديث الـ DataGrids
                     LoadArtistsToGrid();
-                    RefreshWorkStyleGrid();
                     ClearFields();
 
                 }
@@ -246,8 +242,6 @@ namespace ArtGalleryOrganizer
                     }
 
 
-                    RefreshWorkStyleGrid();
-                    refreshcomboArtistName();
 
                     MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -259,9 +253,6 @@ namespace ArtGalleryOrganizer
                     SharedData.Artists.Add(newArtist);
                     LoadArtistsToGrid();
 
-                    //----------------------------------------------------------------------------------
-                    //Artist work style
-                    refreshcomboArtistName();
 
                     MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -287,18 +278,9 @@ namespace ArtGalleryOrganizer
               LoadArtistsToGrid();
               dataGridView1.ClearSelection();
 
-            //---------------------------------------------------------------------
-            //Artist Work style
-            refreshcomboArtistName();
-               // Set default items in work style
-            comboBoxWorkStyle.Items.Clear();
-            comboBoxWorkStyle.Items.AddRange(new string[] { "Realism", "Impressionism", "Abstract", "Surrealism" });
-            comboBoxWorkStyle.SelectedIndex = -1;
-            dataGridViewWorkStyles.ClearSelection();
-
-            // Refresh both data grids
           
-            RefreshWorkStyleGrid();       // لعرض جدول work style
+
+          
 
         }
 
@@ -323,64 +305,8 @@ namespace ArtGalleryOrganizer
         //---------------------------------------------------------------------------------------------------------
         
         
-        private void btnSaveWorkStyle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Check required fields
-                if (comboBoxArtistName.SelectedIndex == -1 ||
-                       comboBoxWorkStyle.SelectedIndex == -1 ||
-                    string.IsNullOrWhiteSpace(txtWorkExperience.Text))
-                {
-                    MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+       
 
-                ArtistWorkStyle workStyle = new ArtistWorkStyle
-                {
-                    ArtistName = comboBoxArtistName.Text,
-                    WorkStyle = comboBoxWorkStyle.Text,
-                    WorkExperience = txtWorkExperience.Text
-                };
-
-                // Edit mode
-                if (selectedWorkStyleIndex >= 0)
-                {
-                    SharedData.ArtistWorkStyles[selectedWorkStyleIndex] = workStyle;
-
-                    DataGridViewRow row = dataGridViewWorkStyles.Rows[selectedWorkStyleIndex];
-                    row.Cells[0].Value = workStyle.ArtistName;
-                    row.Cells[1].Value = workStyle.WorkStyle;
-                    row.Cells[2].Value = workStyle.WorkExperience;
-
-                    MessageBox.Show("Work style updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    selectedWorkStyleIndex = -1;
-                }
-                else
-                {
-                    // Add new
-                    SharedData.ArtistWorkStyles.Add(workStyle);
-                    RefreshWorkStyleGrid();
-
-                    MessageBox.Show("Work style added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                ClearWorkStyleFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error while saving work style: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void refreshcomboArtistName()
-        {
-            comboBoxArtistName.DataSource = SharedData.Artists.Select(a => a.Name).ToList();
-            comboBoxArtistName.SelectedIndex = -1;
-
-        }
 
 
         private void ClearFields()
@@ -400,37 +326,10 @@ namespace ArtGalleryOrganizer
             dataGridView1.DataSource = SharedData.Artists;
         }
 
-        private void RefreshWorkStyleGrid()
-        {
-           
-            // نفس الشيء مع قائمة أنماط العمل
-            dataGridViewWorkStyles.DataSource = null;
-            dataGridViewWorkStyles.DataSource = SharedData.ArtistWorkStyles;
-        }
-
+      
     
-        private void ClearWorkStyleFields()
-        {
-            comboBoxArtistName.SelectedIndex = -1;
-            comboBoxWorkStyle.SelectedIndex = -1;
-            txtWorkExperience.Clear();
-            selectedWorkStyleIndex = -1;
-            comboBoxArtistName.Focus();
-            dataGridViewWorkStyles.ClearSelection();
-        }
+      
 
-        private void dataGridViewWorkStyles_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                selectedWorkStyleIndex = e.RowIndex;
-                var selected = SharedData.ArtistWorkStyles[e.RowIndex];
-
-                comboBoxArtistName.Text = selected.ArtistName;
-                comboBoxWorkStyle.Text = selected.WorkStyle;
-                txtWorkExperience.Text = selected.WorkExperience;
-            }
-        }
 
         private void btnDeleteWorkStyle_Click(object sender, EventArgs e)
         {
@@ -445,13 +344,10 @@ namespace ArtGalleryOrganizer
                     // Reset selection
                     selectedWorkStyleIndex = -1;
 
-                    // Refresh grid and clear input fields
-                    RefreshWorkStyleGrid();
-                    ClearWorkStyleFields();
+                
 
                 }
 
-                ClearWorkStyleFields();
             }
             else
             {
@@ -459,11 +355,9 @@ namespace ArtGalleryOrganizer
             }
         }
 
-        private void btnClearWorkStyle_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ClearWorkStyleFields();
+            this.Close();
         }
-
-
     }
 }

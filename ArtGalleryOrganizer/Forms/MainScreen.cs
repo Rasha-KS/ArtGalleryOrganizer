@@ -85,6 +85,12 @@ namespace ArtGalleryOrganizer
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HallManagement hallManagement = new HallManagement();
+            hallManagement.ShowDialog();
+        }
     }
        
 }

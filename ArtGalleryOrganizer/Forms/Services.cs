@@ -27,61 +27,25 @@ namespace ArtGalleryOrganizer.Forms
 
         private void Services_Load(object sender, EventArgs e)
         {
-            FillArtistCombo();
             DisplaySales();
-            cmbArtistName.SelectedIndex = -1;
             dgvSales.ClearSelection();
 
         }
 
-        private void FillArtistCombo()
-        {
-            var artistNames = SharedData.Bookings.Select(b => b.ArtistName).Distinct().ToList();
-            cmbArtistName.DataSource = null;
-            cmbArtistName.DataSource = artistNames;
-       
-        }
 
-        private void cmbArtistName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedArtist = cmbArtistName.SelectedItem?.ToString();
-
-
-            if (!string.IsNullOrWhiteSpace(selectedArtist))
-            {
-                var titles = SharedData.Bookings
-                    .Where(b => b.ArtistName == selectedArtist)
-                    .Select(b => b.Title)                  
-                    .ToList();
-
-                cmbTitle.DataSource = null;
-                cmbTitle.DataSource = titles;
-                cmbTitle.SelectedIndex = -1;
-            }
-
-        }
+    
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string artistName = cmbArtistName.Text.Trim();
             string title = cmbTitle.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(artistName) || string.IsNullOrWhiteSpace(title))
-            {
-                MessageBox.Show("Please select artist and title.");
-                return;
-            }
+        
 
-            // إيجاد الحجز المطابق
-            var booking = SharedData.Bookings.FirstOrDefault(b =>
-                b.ArtistName.Equals(artistName, StringComparison.OrdinalIgnoreCase) &&
-                b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+            //// إيجاد الحجز المطابق
+            //var booking = SharedData.Bookings.FirstOrDefault(b =>
+            //    b.ArtistName.Equals(artistName, StringComparison.OrdinalIgnoreCase) &&
+            //    b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
 
-            if (booking == null)
-            {
-                MessageBox.Show("Booking not found.");
-                return;
-            }
 
             // حساب السعر الإضافي الحالي حسب الخيارات المحددة
             double extra = 0;
@@ -103,7 +67,6 @@ namespace ArtGalleryOrganizer.Forms
             {
                 // تعديل صف موجود
                 var sale = SharedData.Sales[selectedSaleIndex];
-                sale.ArtistName = artistName;
                 sale.Title = title;
                 sale.OpenBuffet = openBuffet;
                 sale.CafeCorner = cafeCorner;
@@ -117,7 +80,6 @@ namespace ArtGalleryOrganizer.Forms
                 // إضافة عملية بيع جديدة
                 SharedData.Sales.Add(new Sale
                 {
-                    ArtistName = artistName,
                     Title = title,
                     OpenBuffet = openBuffet,
                     CafeCorner = cafeCorner,
@@ -147,7 +109,6 @@ namespace ArtGalleryOrganizer.Forms
                 var selectedSale = SharedData.Sales[e.RowIndex];
                 selectedSaleIndex = e.RowIndex;
 
-                cmbArtistName.Text = selectedSale.ArtistName;
                 cmbTitle.Text = selectedSale.Title;
                 chkOpenBuffet.Checked = selectedSale.OpenBuffet;
                 chkCafeCorner.Checked = selectedSale.CafeCorner;
@@ -166,7 +127,6 @@ namespace ArtGalleryOrganizer.Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cmbArtistName.SelectedIndex = -1;
             cmbTitle.SelectedIndex = -1;
           
             chkOpenBuffet.Checked = false;
@@ -214,6 +174,11 @@ namespace ArtGalleryOrganizer.Forms
         private void chkAdditionalSpace_CheckedChanged(object sender, EventArgs e)
         {
                 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

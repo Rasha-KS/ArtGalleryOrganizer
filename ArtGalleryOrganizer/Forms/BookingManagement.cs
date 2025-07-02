@@ -59,15 +59,12 @@ namespace ArtGalleryOrganizer
             Session selectedSession = cmbSessions.SelectedItem as Session;
             if (selectedSession != null)
             {
-                txtPrice.Text = selectedSession.sessionPrice.ToString();
                 txtTotalPrice.Text = selectedSession.sessionPrice.ToString();
             }
             else
             {
-                txtPrice.Text = "";
             }
 
-            if (cmbSessions.Text == "") { txtPrice.Text = ""; }
 
         }
 
@@ -75,7 +72,6 @@ namespace ArtGalleryOrganizer
         {
 
             string sessionName = cmbSessions.Text.Trim();
-            string priceText = txtPrice.Text.Trim();
 
             if (string.IsNullOrEmpty(sessionName))
             {
@@ -83,11 +79,7 @@ namespace ArtGalleryOrganizer
                 return;
             }
 
-            if (!double.TryParse(priceText, out double price))
-            {
-                MessageBox.Show("Please enter a proper price!");
-                return;
-            }
+          
 
             Session existingSession = null;
             foreach (var s in SharedData.Sessions)
@@ -102,12 +94,10 @@ namespace ArtGalleryOrganizer
 
             if (existingSession != null)
             {
-                existingSession.sessionPrice = price;
                 MessageBox.Show("Session updated successfully!");
             }
             else
             {
-                SharedData.Sessions.Add(new Session(sessionName, price));
                 MessageBox.Show("Session Added successfully!");
 
             }
@@ -178,7 +168,6 @@ namespace ArtGalleryOrganizer
 
             string artistName = cmbArtistName.Text.Trim();
             string sessionName = cmbSessions.Text.Trim();
-            string title = txtTitle.Text.Trim();
             double plusHours = Convert.ToDouble(txtPlusHours.Text);
             double totalHours = Convert.ToDouble(txtTotalHours.Text);
             DateTime startTime = dtpTime.Value;
@@ -207,7 +196,6 @@ namespace ArtGalleryOrganizer
                 booking.TotalHours = totalHours;
                 booking.PlusHours = plusHours;
                 booking.ArtworksCount = artworksCount;
-                booking.Title = title;
                 booking.StartTime = startTime;
                 booking.TotalPrice = totalPrice;
             }
@@ -222,7 +210,6 @@ namespace ArtGalleryOrganizer
                     TotalHours = totalHours,
                     PlusHours = plusHours,
                     ArtworksCount = artworksCount,
-                    Title = title,
                     StartTime = startTime,
                     TotalPrice = totalPrice
                 });
@@ -244,7 +231,6 @@ namespace ArtGalleryOrganizer
             txtPlusHours.Text = "0";
             txtTotalPrice.Clear();
             txtArtworksCount.Clear();
-            txtTitle.Clear();
             dtpBookingDate.Value = DateTime.Today;
             dtpTime.Value = DateTime.Now;
             dgvBookings.ClearSelection();
@@ -263,8 +249,7 @@ namespace ArtGalleryOrganizer
                 string.IsNullOrWhiteSpace(cmbSessions.Text) ||
                 string.IsNullOrWhiteSpace(txtTotalHours.Text) ||
                 string.IsNullOrWhiteSpace(txtPlusHours.Text) ||
-                string.IsNullOrWhiteSpace(txtArtworksCount.Text) ||
-                string.IsNullOrWhiteSpace(txtTitle.Text))
+                string.IsNullOrWhiteSpace(txtArtworksCount.Text) )
             {
                 MessageBox.Show("Please enter all fields!!");
                 return false;
@@ -345,7 +330,6 @@ namespace ArtGalleryOrganizer
                 txtTotalHours.Text = selectedBooking.TotalHours.ToString();
                 txtPlusHours.Text = selectedBooking.PlusHours.ToString();
                 txtArtworksCount.Text = selectedBooking.ArtworksCount.ToString();
-                txtTitle.Text = selectedBooking.Title;
                 dtpBookingDate.Value = selectedBooking.Date;
                 dtpTime.Value = selectedBooking.StartTime;
                 txtTotalPrice.Text = selectedBooking.TotalPrice.ToString();
@@ -360,8 +344,11 @@ namespace ArtGalleryOrganizer
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+  
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
     }
 }
