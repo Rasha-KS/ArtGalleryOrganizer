@@ -31,22 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtWorkExperience = new System.Windows.Forms.TextBox();
-            this.btnClearWorkStyle = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewWorkStyles = new System.Windows.Forms.DataGridView();
-            this.btnDeleteWorkStyle = new System.Windows.Forms.Button();
-            this.btnSaveWorkStyle = new System.Windows.Forms.Button();
-            this.comboBoxArtistName = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxWorkStyle = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSaveArtist = new System.Windows.Forms.Button();
@@ -58,8 +46,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkStyles)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +75,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.dataGridView1.Location = new System.Drawing.Point(566, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(426, 45);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -106,7 +92,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 26;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(657, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(478, 378);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -114,186 +100,16 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label1.Location = new System.Drawing.Point(14, 55);
+            this.label1.Location = new System.Drawing.Point(24, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Artist Name";
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label2.Location = new System.Drawing.Point(14, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Work Style";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.groupBox1.Controls.Add(this.txtWorkExperience);
-            this.groupBox1.Controls.Add(this.btnClearWorkStyle);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.dataGridViewWorkStyles);
-            this.groupBox1.Controls.Add(this.btnDeleteWorkStyle);
-            this.groupBox1.Controls.Add(this.btnSaveWorkStyle);
-            this.groupBox1.Controls.Add(this.comboBoxArtistName);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBoxWorkStyle);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.groupBox1.Location = new System.Drawing.Point(24, 411);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1238, 254);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Artists Work Styles";
-            // 
-            // txtWorkExperience
-            // 
-            this.txtWorkExperience.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.txtWorkExperience.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorkExperience.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtWorkExperience.Location = new System.Drawing.Point(256, 150);
-            this.txtWorkExperience.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtWorkExperience.Name = "txtWorkExperience";
-            this.txtWorkExperience.Size = new System.Drawing.Size(227, 32);
-            this.txtWorkExperience.TabIndex = 26;
-            // 
-            // btnClearWorkStyle
-            // 
-            this.btnClearWorkStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnClearWorkStyle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearWorkStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnClearWorkStyle.Location = new System.Drawing.Point(393, 200);
-            this.btnClearWorkStyle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearWorkStyle.Name = "btnClearWorkStyle";
-            this.btnClearWorkStyle.Size = new System.Drawing.Size(143, 37);
-            this.btnClearWorkStyle.TabIndex = 24;
-            this.btnClearWorkStyle.Text = "Clear";
-            this.btnClearWorkStyle.UseVisualStyleBackColor = false;
-            this.btnClearWorkStyle.Click += new System.EventHandler(this.btnClearWorkStyle_Click);
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label7.Location = new System.Drawing.Point(14, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 32);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Work Experience";
-            // 
-            // dataGridViewWorkStyles
-            // 
-            this.dataGridViewWorkStyles.AllowUserToAddRows = false;
-            this.dataGridViewWorkStyles.AllowUserToResizeColumns = false;
-            this.dataGridViewWorkStyles.AllowUserToResizeRows = false;
-            this.dataGridViewWorkStyles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewWorkStyles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewWorkStyles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewWorkStyles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewWorkStyles.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewWorkStyles.EnableHeadersVisualStyles = false;
-            this.dataGridViewWorkStyles.Location = new System.Drawing.Point(566, 27);
-            this.dataGridViewWorkStyles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewWorkStyles.MultiSelect = false;
-            this.dataGridViewWorkStyles.Name = "dataGridViewWorkStyles";
-            this.dataGridViewWorkStyles.ReadOnly = true;
-            this.dataGridViewWorkStyles.RowHeadersVisible = false;
-            this.dataGridViewWorkStyles.RowHeadersWidth = 51;
-            this.dataGridViewWorkStyles.RowTemplate.Height = 26;
-            this.dataGridViewWorkStyles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewWorkStyles.Size = new System.Drawing.Size(657, 210);
-            this.dataGridViewWorkStyles.TabIndex = 24;
-            this.dataGridViewWorkStyles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewWorkStyles_CellClick);
-            // 
-            // btnDeleteWorkStyle
-            // 
-            this.btnDeleteWorkStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnDeleteWorkStyle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteWorkStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnDeleteWorkStyle.Location = new System.Drawing.Point(199, 200);
-            this.btnDeleteWorkStyle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDeleteWorkStyle.Name = "btnDeleteWorkStyle";
-            this.btnDeleteWorkStyle.Size = new System.Drawing.Size(144, 37);
-            this.btnDeleteWorkStyle.TabIndex = 23;
-            this.btnDeleteWorkStyle.Text = "Delete";
-            this.btnDeleteWorkStyle.UseVisualStyleBackColor = false;
-            this.btnDeleteWorkStyle.Click += new System.EventHandler(this.btnDeleteWorkStyle_Click);
-            // 
-            // btnSaveWorkStyle
-            // 
-            this.btnSaveWorkStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnSaveWorkStyle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveWorkStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnSaveWorkStyle.Location = new System.Drawing.Point(18, 200);
-            this.btnSaveWorkStyle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSaveWorkStyle.Name = "btnSaveWorkStyle";
-            this.btnSaveWorkStyle.Size = new System.Drawing.Size(143, 37);
-            this.btnSaveWorkStyle.TabIndex = 22;
-            this.btnSaveWorkStyle.Text = "Save";
-            this.btnSaveWorkStyle.UseVisualStyleBackColor = false;
-            this.btnSaveWorkStyle.Click += new System.EventHandler(this.btnSaveWorkStyle_Click);
-            // 
-            // comboBoxArtistName
-            // 
-            this.comboBoxArtistName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.comboBoxArtistName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxArtistName.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxArtistName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.comboBoxArtistName.FormattingEnabled = true;
-            this.comboBoxArtistName.Location = new System.Drawing.Point(256, 41);
-            this.comboBoxArtistName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxArtistName.Name = "comboBoxArtistName";
-            this.comboBoxArtistName.Size = new System.Drawing.Size(227, 33);
-            this.comboBoxArtistName.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label6.Location = new System.Drawing.Point(14, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 37);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Artist Name";
-            // 
-            // comboBoxWorkStyle
-            // 
-            this.comboBoxWorkStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.comboBoxWorkStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWorkStyle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxWorkStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.comboBoxWorkStyle.FormattingEnabled = true;
-            this.comboBoxWorkStyle.Location = new System.Drawing.Point(256, 94);
-            this.comboBoxWorkStyle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxWorkStyle.Name = "comboBoxWorkStyle";
-            this.comboBoxWorkStyle.Size = new System.Drawing.Size(227, 33);
-            this.comboBoxWorkStyle.TabIndex = 6;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnSaveArtist);
@@ -312,20 +128,33 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1238, 370);
+            this.groupBox2.Size = new System.Drawing.Size(939, 512);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Artists Information";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.button1.Location = new System.Drawing.Point(761, 427);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 37);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnClear.Location = new System.Drawing.Point(393, 314);
+            this.btnClear.Location = new System.Drawing.Point(127, 386);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(143, 37);
+            this.btnClear.Size = new System.Drawing.Size(155, 37);
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -336,10 +165,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnDelete.Location = new System.Drawing.Point(199, 314);
+            this.btnDelete.Location = new System.Drawing.Point(234, 322);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(144, 37);
+            this.btnDelete.Size = new System.Drawing.Size(168, 37);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -350,10 +179,10 @@
             this.btnSaveArtist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.btnSaveArtist.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveArtist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.btnSaveArtist.Location = new System.Drawing.Point(18, 314);
+            this.btnSaveArtist.Location = new System.Drawing.Point(30, 322);
             this.btnSaveArtist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveArtist.Name = "btnSaveArtist";
-            this.btnSaveArtist.Size = new System.Drawing.Size(143, 37);
+            this.btnSaveArtist.Size = new System.Drawing.Size(154, 37);
             this.btnSaveArtist.TabIndex = 19;
             this.btnSaveArtist.Text = "Save";
             this.btnSaveArtist.UseVisualStyleBackColor = false;
@@ -364,7 +193,7 @@
             this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtPhone.Location = new System.Drawing.Point(165, 234);
+            this.txtPhone.Location = new System.Drawing.Point(175, 234);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
@@ -377,7 +206,7 @@
             this.txtNationality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.txtNationality.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtNationality.Location = new System.Drawing.Point(165, 173);
+            this.txtNationality.Location = new System.Drawing.Point(175, 173);
             this.txtNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(227, 32);
@@ -388,7 +217,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label5.Location = new System.Drawing.Point(15, 236);
+            this.label5.Location = new System.Drawing.Point(25, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 41);
             this.label5.TabIndex = 12;
@@ -399,7 +228,7 @@
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtName.Location = new System.Drawing.Point(165, 54);
+            this.txtName.Location = new System.Drawing.Point(175, 54);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 32);
@@ -410,7 +239,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label4.Location = new System.Drawing.Point(15, 114);
+            this.label4.Location = new System.Drawing.Point(25, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 32);
             this.label4.TabIndex = 10;
@@ -421,7 +250,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtEmail.Location = new System.Drawing.Point(165, 114);
+            this.txtEmail.Location = new System.Drawing.Point(175, 114);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(227, 32);
@@ -433,19 +262,18 @@
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.label3.Location = new System.Drawing.Point(14, 176);
+            this.label3.Location = new System.Drawing.Point(24, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 32);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Nationality";
+            this.label3.Text = "NationalID";
             // 
             // ArtistsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1292, 682);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(992, 564);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -456,9 +284,6 @@
             this.HandleCreated += new System.EventHandler(this.ArtistsManagement_HandleCreated);
             this.Resize += new System.EventHandler(this.ArtistsManagement_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkStyles)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -469,10 +294,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBoxWorkStyle;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
@@ -480,16 +302,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxArtistName;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSaveArtist;
-        private System.Windows.Forms.Button btnClearWorkStyle;
-        private System.Windows.Forms.Button btnDeleteWorkStyle;
-        private System.Windows.Forms.Button btnSaveWorkStyle;
-        private System.Windows.Forms.TextBox txtWorkExperience;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridViewWorkStyles;
+        private System.Windows.Forms.Button button1;
     }
 }

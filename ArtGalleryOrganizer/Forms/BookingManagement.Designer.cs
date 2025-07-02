@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBookings = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,10 +42,11 @@
             this.txtTotalHours = new System.Windows.Forms.TextBox();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.cmbSessions = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbArtistName = new System.Windows.Forms.ComboBox();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
@@ -53,46 +54,40 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbSessions = new System.Windows.Forms.ComboBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnSaveSession = new System.Windows.Forms.Button();
-            this.btnDeleteSession = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBookings
             // 
             this.dgvBookings.AllowUserToAddRows = false;
             this.dgvBookings.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            this.dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+            this.dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBookings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBookings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBookings.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBookings.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBookings.EnableHeadersVisualStyles = false;
             this.dgvBookings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.dgvBookings.Location = new System.Drawing.Point(21, 377);
+            this.dgvBookings.Location = new System.Drawing.Point(25, 250);
             this.dgvBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBookings.MultiSelect = false;
             this.dgvBookings.Name = "dgvBookings";
@@ -101,7 +96,7 @@
             this.dgvBookings.RowHeadersWidth = 51;
             this.dgvBookings.RowTemplate.Height = 26;
             this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBookings.Size = new System.Drawing.Size(839, 308);
+            this.dgvBookings.Size = new System.Drawing.Size(839, 321);
             this.dgvBookings.TabIndex = 0;
             this.dgvBookings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookings_CellClick);
             // 
@@ -119,11 +114,11 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label2.Location = new System.Drawing.Point(76, 121);
+            this.label2.Location = new System.Drawing.Point(342, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 31);
+            this.label2.Size = new System.Drawing.Size(61, 29);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Booking Date";
+            this.label2.Text = " Date";
             // 
             // label3
             // 
@@ -140,7 +135,7 @@
             this.btnSaveBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnSaveBooking.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnSaveBooking.Location = new System.Drawing.Point(28, 165);
+            this.btnSaveBooking.Location = new System.Drawing.Point(70, 165);
             this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(211, 38);
@@ -154,7 +149,7 @@
             this.btnDeleteBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnDeleteBooking.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnDeleteBooking.Location = new System.Drawing.Point(310, 165);
+            this.btnDeleteBooking.Location = new System.Drawing.Point(341, 165);
             this.btnDeleteBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteBooking.Name = "btnDeleteBooking";
             this.btnDeleteBooking.Size = new System.Drawing.Size(211, 38);
@@ -168,7 +163,7 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnClear.Location = new System.Drawing.Point(603, 165);
+            this.btnClear.Location = new System.Drawing.Point(607, 165);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(211, 38);
@@ -204,18 +199,20 @@
             this.dtpBookingDate.CustomFormat = "dd/MM/yyyy";
             this.dtpBookingDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookingDate.Location = new System.Drawing.Point(217, 119);
+            this.dtpBookingDate.Location = new System.Drawing.Point(422, 114);
             this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(222, 29);
+            this.dtpBookingDate.Size = new System.Drawing.Size(171, 29);
             this.dtpBookingDate.TabIndex = 10;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtTitle);
+            this.groupBox1.Controls.Add(this.cmbSessions);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbArtistName);
@@ -238,52 +235,72 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(858, 225);
+            this.groupBox1.Size = new System.Drawing.Size(858, 226);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking Management";
+            // 
+            // label9
+            // 
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.label9.Location = new System.Drawing.Point(30, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(135, 31);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Hall capacity";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.label7.Location = new System.Drawing.Point(26, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 31);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Hall";
             // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.BackColor = System.Drawing.Color.White;
             this.txtTotalPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtTotalPrice.Location = new System.Drawing.Point(581, 119);
+            this.txtTotalPrice.Location = new System.Drawing.Point(696, 114);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(227, 29);
+            this.txtTotalPrice.Size = new System.Drawing.Size(148, 29);
             this.txtTotalPrice.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label10.Location = new System.Drawing.Point(471, 121);
+            this.label10.Location = new System.Drawing.Point(633, 116);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 31);
+            this.label10.Size = new System.Drawing.Size(57, 31);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Total Price";
+            this.label10.Text = "Price";
             // 
-            // label9
+            // cmbSessions
             // 
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(26, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 31);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Title";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.BackColor = System.Drawing.Color.White;
-            this.txtTitle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtTitle.Location = new System.Drawing.Point(109, 72);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(222, 29);
-            this.txtTitle.TabIndex = 21;
+            this.cmbSessions.BackColor = System.Drawing.Color.White;
+            this.cmbSessions.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSessions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.cmbSessions.FormattingEnabled = true;
+            this.cmbSessions.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "B1",
+            "C1",
+            "D1",
+            "D2"});
+            this.cmbSessions.Location = new System.Drawing.Point(109, 73);
+            this.cmbSessions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSessions.Name = "cmbSessions";
+            this.cmbSessions.Size = new System.Drawing.Size(222, 30);
+            this.cmbSessions.TabIndex = 24;
+            this.cmbSessions.SelectedIndexChanged += new System.EventHandler(this.cmbSessions_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -361,112 +378,38 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Total Hours";
             // 
-            // cmbSessions
+            // button1
             // 
-            this.cmbSessions.BackColor = System.Drawing.Color.White;
-            this.cmbSessions.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSessions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.cmbSessions.FormattingEnabled = true;
-            this.cmbSessions.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1",
-            "C1",
-            "D1",
-            "D2"});
-            this.cmbSessions.Location = new System.Drawing.Point(155, 28);
-            this.cmbSessions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbSessions.Name = "cmbSessions";
-            this.cmbSessions.Size = new System.Drawing.Size(97, 30);
-            this.cmbSessions.TabIndex = 24;
-            this.cmbSessions.SelectedIndexChanged += new System.EventHandler(this.cmbSessions_SelectedIndexChanged);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.button1.Location = new System.Drawing.Point(653, 575);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 38);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // txtPrice
+            // label11
             // 
-            this.txtPrice.BackColor = System.Drawing.Color.White;
-            this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.txtPrice.Location = new System.Drawing.Point(349, 27);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(163, 29);
-            this.txtPrice.TabIndex = 25;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label7.Location = new System.Drawing.Point(26, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(219, 31);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Session Name";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label12.Location = new System.Drawing.Point(290, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 31);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Price";
-            // 
-            // btnSaveSession
-            // 
-            this.btnSaveSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.btnSaveSession.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnSaveSession.Location = new System.Drawing.Point(28, 71);
-            this.btnSaveSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSaveSession.Name = "btnSaveSession";
-            this.btnSaveSession.Size = new System.Drawing.Size(227, 38);
-            this.btnSaveSession.TabIndex = 21;
-            this.btnSaveSession.Text = "Save Session";
-            this.btnSaveSession.UseVisualStyleBackColor = false;
-            this.btnSaveSession.Click += new System.EventHandler(this.btnSaveSession_Click);
-            // 
-            // btnDeleteSession
-            // 
-            this.btnDeleteSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.btnDeleteSession.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnDeleteSession.Location = new System.Drawing.Point(294, 71);
-            this.btnDeleteSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDeleteSession.Name = "btnDeleteSession";
-            this.btnDeleteSession.Size = new System.Drawing.Size(227, 38);
-            this.btnDeleteSession.TabIndex = 22;
-            this.btnDeleteSession.Text = "Delete Session";
-            this.btnDeleteSession.UseVisualStyleBackColor = false;
-            this.btnDeleteSession.Click += new System.EventHandler(this.btnDeleteSession_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnDeleteSession);
-            this.groupBox3.Controls.Add(this.btnSaveSession);
-            this.groupBox3.Controls.Add(this.txtPrice);
-            this.groupBox3.Controls.Add(this.cmbSessions);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.groupBox3.Location = new System.Drawing.Point(176, 239);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(541, 122);
-            this.groupBox3.TabIndex = 20;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Sessions";
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.label11.Location = new System.Drawing.Point(196, 117);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(135, 31);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Status";
             // 
             // BookingManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(889, 702);
+            this.ClientSize = new System.Drawing.Size(889, 618);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgvBookings);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -480,8 +423,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -506,16 +447,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbSessions;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnSaveSession;
-        private System.Windows.Forms.Button btnDeleteSession;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -80,6 +80,11 @@ namespace ArtGalleryOrganizer
             dataGridView3.Columns["StartTime"].Visible = false;
 
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
        
 }

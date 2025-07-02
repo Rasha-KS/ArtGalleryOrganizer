@@ -205,5 +205,15 @@ namespace ArtGalleryOrganizer.Forms
                 btnClear.PerformClick();
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkAdditionalSpace_CheckedChanged(object sender, EventArgs e)
+        {
+                
+        }
     }
 }
