@@ -1,31 +1,15 @@
-﻿using ArtGalleryOrganizer.Classes;
-using StudentProject1.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
+using StudentProject1.Classes;
 
 namespace ArtGalleryOrganizer
 {
-
     public partial class ArtistsManagement : Form
     {
-        //------------------------------------------------------------
-        //Artist information 
-         int selectedRowIndex = -1;
-      
-
-        //------------------------------------------------------------
-        //Artist work Style 
-         int selectedWorkStyleIndex = -1;
-       
-
+        int selectedRowIndex = -1;
 
         public ArtistsManagement()
         {
@@ -33,7 +17,6 @@ namespace ArtGalleryOrganizer
         }
 
         ResizeControls r = new ResizeControls();
-
 
         private void ArtistsManagement_Resize(object sender, EventArgs e)
         {
@@ -45,38 +28,17 @@ namespace ArtGalleryOrganizer
             r.Container = this;
         }
 
-        //------------------------------------------------------------
-        //Artist information 
-
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= 0)
             {
-                var result = MessageBox.Show("Are you sure you want to delete this artist and related work styles?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Are you sure you want to delete this artist?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    int index = dataGridView1.CurrentRow.Index;
-
-                    // اسم الفنان المحدد
-                    string artistName = SharedData.Artists[index].Name;
-
-                    // حذف الفنان من القائمة
-                    SharedData.Artists.RemoveAt(index);
-
-                    // حذف الأنماط المرتبطة بالفنان
-                    for (int i = SharedData.ArtistWorkStyles.Count - 1; i >= 0; i--)
-                    {
-                        if (SharedData.ArtistWorkStyles[i].ArtistName == artistName)
-                        {
-                            SharedData.ArtistWorkStyles.RemoveAt(i);
-                        }
-                    }
-
-                    // تحديث الـ DataGrids
+                    int artistId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ArtistID"].Value);
+                    DBHelper.Execute("DELETE FROM Artists WHERE ArtistID = @Id", new SqlParameter("@Id", artistId));
                     LoadArtistsToGrid();
                     ClearFields();
-
                 }
             }
             else
@@ -88,55 +50,24 @@ namespace ArtGalleryOrganizer
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
-
-            // (اختياري) إرجاع المؤشر لأول حقل
             txtName.Focus();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-           
             try
-    {
-        // التحقق إن كان النص يحتوي أرقام
-        if (txtName.Text.Any(char.IsDigit))
-        {
-            MessageBox.Show("Numbers are not allowed in the name field.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            // إزالة الأرقام من النص
-            txtName.Text = new string(txtName.Text.Where(c => !char.IsDigit(c)).ToArray());
-
-            // إرجاع المؤشر لنهاية النص
-            txtName.SelectionStart = txtName.Text.Length;
-        }
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show("An error occurred: " + ex.Message);
-    }
-           
-
-        }
-
-        private void txtNationality_TextChanged(object sender, EventArgs e)
-        {
-             try
+            {
+                if (txtName.Text.Any(char.IsDigit))
                 {
-                    if (txtNationality.Text.Any(char.IsDigit))
-                    {
-                        MessageBox.Show("Numbers are not allowed in the nationality field.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        // إزالة الأرقام
-                        txtNationality.Text = new string(txtNationality.Text.Where(c => !char.IsDigit(c)).ToArray());
-                        txtNationality.SelectionStart = txtNationality.Text.Length;
-                    }
+                    MessageBox.Show("Numbers are not allowed in the name field.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtName.Text = new string(txtName.Text.Where(c => !char.IsDigit(c)).ToArray());
+                    txtName.SelectionStart = txtName.Text.Length;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
-           
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
@@ -144,10 +75,10 @@ namespace ArtGalleryOrganizer
             if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !IsValidEmail(txtEmail.Text))
             {
                 MessageBox.Show("Invalid email format.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               
                 txtEmail.Focus();
             }
         }
+
         private bool IsValidEmail(string email)
         {
             try
@@ -160,10 +91,8 @@ namespace ArtGalleryOrganizer
                 return false;
             }
         }
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+        private void txtEmail_TextChanged(object sender, EventArgs e) { }
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
@@ -172,13 +101,9 @@ namespace ArtGalleryOrganizer
                 if (txtPhone.Text.Any(c => !char.IsDigit(c)))
                 {
                     MessageBox.Show("Only digits are allowed in the phone number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    // إزالة الحروف أو الرموز
                     txtPhone.Text = new string(txtPhone.Text.Where(char.IsDigit).ToArray());
                     txtPhone.SelectionStart = txtPhone.Text.Length;
                 }
-
-                // التحقق من الطول (اختياري)
                 if (txtPhone.Text.Length > 10)
                 {
                     txtPhone.Text = txtPhone.Text.Substring(0, 10);
@@ -193,74 +118,49 @@ namespace ArtGalleryOrganizer
 
         private void btnSaveArtist_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtNationalID.Text) ||
+                string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                // Check required fields
-                if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                    string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(txtNationality.Text) ||
-                    string.IsNullOrWhiteSpace(txtPhone.Text))
-                {
-                    MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                Artist newArtist = new Artist
-                {
-                    Name = txtName.Text,
-                    Email = txtEmail.Text,
-                    Nationality = txtNationality.Text,
-                    Phone = txtPhone.Text
-                };
-
-                // Check if we're editing an existing row
                 if (selectedRowIndex >= 0)
                 {
-                    string oldArtistName = SharedData.Artists[selectedRowIndex].Name;
-                    string newArtistName = txtName.Text;
+                    int artistId = Convert.ToInt32(dataGridView1.Rows[selectedRowIndex].Cells["ArtistID"].Value);
 
-                    // Keep original ID
-                    newArtist.Id = SharedData.Artists[selectedRowIndex].Id;
-
-                    // Update the list and DataGridView
-                    SharedData.Artists[selectedRowIndex] = newArtist;
-
-                    DataGridViewRow row = dataGridView1.Rows[selectedRowIndex];
-                    row.Cells[0].Value = newArtist.Id;
-                    row.Cells[1].Value = newArtist.Name;
-                    row.Cells[2].Value = newArtist.Email;
-                    row.Cells[3].Value = newArtist.Nationality;
-                    row.Cells[4].Value = newArtist.Phone;
-
-
-                    for (int i = 0; i < SharedData.ArtistWorkStyles.Count; i++)
-                    {
-                        if (SharedData.ArtistWorkStyles[i].ArtistName == oldArtistName)
-                        {
-                            SharedData.ArtistWorkStyles[i].ArtistName = newArtistName;
-                        }
-                    }
-
-
+                    string updateQuery = @"UPDATE Artists SET ArtistName = @Name, Email = @Email, Phone = @Phone, NationalID = @NationalID WHERE ArtistID = @Id";
+                    DBHelper.Execute(updateQuery,
+                        new SqlParameter("@Name", txtName.Text),
+                        new SqlParameter("@Email", txtEmail.Text),
+                        new SqlParameter("@Phone", txtPhone.Text),
+                        new SqlParameter("@NationalID", txtNationalID.Text),
+                        new SqlParameter("@Id", artistId));
 
                     MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    //  Original Add logic (no change here)
-                 
-                    newArtist.Id = SharedData.Artists.Max(a => a.Id)+1;
-                    SharedData.Artists.Add(newArtist);
-                    LoadArtistsToGrid();
+                    var dt = DBHelper.GetData("SELECT ISNULL(MAX(ArtistID), 0) + 1 FROM Artists");
+                    int newId = Convert.ToInt32(dt.Rows[0][0]);
 
+                    string insertQuery = @"INSERT INTO Artists (ArtistID, ArtistName, Email, Phone, NationalID) VALUES (@Id, @Name, @Email, @Phone, @NationalID)";
+                    DBHelper.Execute(insertQuery,
+                        new SqlParameter("@Id", newId),
+                        new SqlParameter("@Name", txtName.Text),
+                        new SqlParameter("@Email", txtEmail.Text),
+                        new SqlParameter("@Phone", txtPhone.Text),
+                        new SqlParameter("@NationalID", txtNationalID.Text));
 
                     MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-               
+                LoadArtistsToGrid();
                 ClearFields();
-              
-              
             }
             catch (Exception ex)
             {
@@ -270,50 +170,29 @@ namespace ArtGalleryOrganizer
 
         private void ArtistsManagement_Load(object sender, EventArgs e)
         {
-
-            //------------------------------------------------------------
-            //Artist information 
-
-            // Load into DataGridView
-              LoadArtistsToGrid();
-              dataGridView1.ClearSelection();
-
-          
-
-          
-
+            LoadArtistsToGrid();
+            dataGridView1.ClearSelection();
         }
 
-        //------------------------------------------------------------
-        //Artist information 
-      
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 selectedRowIndex = e.RowIndex;
-                var selected = SharedData.Artists[e.RowIndex];
-                txtName.Text = selected.Name;
-                txtEmail.Text =selected.Email;
-                txtNationality.Text = selected.Nationality;
-                txtPhone.Text = selected.Phone;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                txtName.Text = row.Cells["ArtistName"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtNationalID.Text = row.Cells["NationalID"].Value.ToString();
+                txtPhone.Text = row.Cells["Phone"].Value.ToString();
             }
         }
-
-        //---------------------------------------------------------------------------------------------------------
-        //ARTIST WORK STYLE
-        //---------------------------------------------------------------------------------------------------------
-        
-        
-       
-
-
 
         private void ClearFields()
         {
             txtName.Clear();
             txtEmail.Clear();
-            txtNationality.Clear();
+            txtNationalID.Clear();
             txtPhone.Clear();
             selectedRowIndex = -1;
             dataGridView1.ClearSelection();
@@ -321,43 +200,42 @@ namespace ArtGalleryOrganizer
 
         private void LoadArtistsToGrid()
         {
-            // بدل تفريغ الصفوف وإضافتهم يدوياً، نربط DataGridView مباشرة مع BindingList
-            dataGridView1.DataSource = null;  // لتحديث الربط إذا كان موجود
-            dataGridView1.DataSource = SharedData.Artists;
-        }
-
-      
-    
-      
-
-
-        private void btnDeleteWorkStyle_Click(object sender, EventArgs e)
-        {
-            if (selectedWorkStyleIndex >= 0 && selectedWorkStyleIndex < SharedData.ArtistWorkStyles.Count)
-            {
-                var result = MessageBox.Show("Are you sure you want to delete this work style?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    // Remove from the list
-                    SharedData.ArtistWorkStyles.RemoveAt(selectedWorkStyleIndex);
-
-                    // Reset selection
-                    selectedWorkStyleIndex = -1;
-
-                
-
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Please select a work style to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            dataGridView1.DataSource = null;
+            DataTable dt = DBHelper.GetData("SELECT * FROM Artists");
+            dataGridView1.DataSource = dt;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+    }
+
+    public static class DBHelper
+    {
+        private static string connStr = "Server=.;Database=ArtGalleryDB;Integrated Security=True;";
+
+        public static DataTable GetData(string query)
+        {
+            using (var conn = new SqlConnection(connStr))
+            using (var cmd = new SqlCommand(query, conn))
+            using (var adapter = new SqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static int Execute(string query, params SqlParameter[] parameters)
+        {
+            using (var conn = new SqlConnection(connStr))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddRange(parameters);
+                conn.Open();
+                return cmd.ExecuteNonQuery();
+            }
         }
     }
 }
