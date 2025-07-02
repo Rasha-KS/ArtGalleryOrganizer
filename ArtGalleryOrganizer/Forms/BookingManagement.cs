@@ -41,10 +41,10 @@ namespace ArtGalleryOrganizer
 
             cmbArtistName.DataSource = SharedData.Artists;
             cmbArtistName.DisplayMember = "Name";
-            cmbSessions.DataSource = SharedData.Sessions;
-            cmbSessions.DisplayMember = "Name";
+            cmbHall.DataSource = SharedData.Sessions;
+            cmbHall.DisplayMember = "Name";
 
-            cmbSessions.SelectedIndex = -1;
+            cmbHall.SelectedIndex = -1;
             cmbArtistName.SelectedIndex = -1;
             
             dgvBookings.ClearSelection();
@@ -56,7 +56,7 @@ namespace ArtGalleryOrganizer
 
         private void cmbSessions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session selectedSession = cmbSessions.SelectedItem as Session;
+            Session selectedSession = cmbHall.SelectedItem as Session;
             if (selectedSession != null)
             {
                 txtTotalPrice.Text = selectedSession.sessionPrice.ToString();
@@ -71,7 +71,7 @@ namespace ArtGalleryOrganizer
         private void btnSaveSession_Click(object sender, EventArgs e)
         {
 
-            string sessionName = cmbSessions.Text.Trim();
+            string sessionName = cmbHall.Text.Trim();
 
             if (string.IsNullOrEmpty(sessionName))
             {
@@ -108,21 +108,21 @@ namespace ArtGalleryOrganizer
 
         private void RefreshComboBox()
         {
-            cmbSessions.DataSource = null;
-            cmbSessions.DataSource = SharedData.Sessions;
-            cmbSessions.DisplayMember = "Name";
-            cmbSessions.SelectedIndex = -1;
+            cmbHall.DataSource = null;
+            cmbHall.DataSource = SharedData.Sessions;
+            cmbHall.DisplayMember = "Name";
+            cmbHall.SelectedIndex = -1;
         }
 
         private void btnDeleteSession_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbSessions.Text))
+            if (string.IsNullOrWhiteSpace(cmbHall.Text))
             {
                 MessageBox.Show("Please select a session to remove!");
                 return;
             }
 
-            string sessionName = cmbSessions.Text;
+            string sessionName = cmbHall.Text;
             Session sessionToRemove = null;
 
             foreach (var s in SharedData.Sessions)
@@ -167,7 +167,7 @@ namespace ArtGalleryOrganizer
                 return;
 
             string artistName = cmbArtistName.Text.Trim();
-            string sessionName = cmbSessions.Text.Trim();
+            string sessionName = cmbHall.Text.Trim();
             double plusHours = Convert.ToDouble(txtPlusHours.Text);
             double totalHours = Convert.ToDouble(txtTotalHours.Text);
             DateTime startTime = dtpTime.Value;
@@ -225,7 +225,7 @@ namespace ArtGalleryOrganizer
         private void btnClear_Click(object sender, EventArgs e)
         {
             cmbArtistName.SelectedIndex = -1;
-            cmbSessions.SelectedIndex = -1;
+            cmbHall.SelectedIndex = -1;
             cmbArtistName.Text = "";
             txtTotalHours.Clear();
             txtPlusHours.Text = "0";
@@ -246,7 +246,7 @@ namespace ArtGalleryOrganizer
         {
 
             if (string.IsNullOrWhiteSpace(cmbArtistName.Text) ||
-                string.IsNullOrWhiteSpace(cmbSessions.Text) ||
+                string.IsNullOrWhiteSpace(cmbHall.Text) ||
                 string.IsNullOrWhiteSpace(txtTotalHours.Text) ||
                 string.IsNullOrWhiteSpace(txtPlusHours.Text) ||
                 string.IsNullOrWhiteSpace(txtArtworksCount.Text) )
@@ -326,7 +326,7 @@ namespace ArtGalleryOrganizer
                 selectedBookingIndex = e.RowIndex;
 
                 cmbArtistName.Text = selectedBooking.ArtistName;
-                cmbSessions.Text = selectedBooking.Session;
+                cmbHall.Text = selectedBooking.Session;
                 txtTotalHours.Text = selectedBooking.TotalHours.ToString();
                 txtPlusHours.Text = selectedBooking.PlusHours.ToString();
                 txtArtworksCount.Text = selectedBooking.ArtworksCount.ToString();

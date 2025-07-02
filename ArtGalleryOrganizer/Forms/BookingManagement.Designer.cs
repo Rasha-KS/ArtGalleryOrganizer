@@ -42,12 +42,12 @@
             this.txtTotalHours = new System.Windows.Forms.TextBox();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblCapacity = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbSessions = new System.Windows.Forms.ComboBox();
+            this.cmbHall = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbArtistName = new System.Windows.Forms.ComboBox();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
@@ -207,12 +207,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.lblStatus);
+            this.groupBox1.Controls.Add(this.lblCapacity);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.cmbSessions);
+            this.groupBox1.Controls.Add(this.cmbHall);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbArtistName);
@@ -240,27 +240,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking Management";
             // 
-            // label11
+            // lblStatus
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label11.Location = new System.Drawing.Point(196, 117);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 31);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Status";
+            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.lblStatus.Location = new System.Drawing.Point(196, 117);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(135, 31);
+            this.lblStatus.TabIndex = 27;
+            this.lblStatus.Text = "Status";
             // 
-            // label9
+            // lblCapacity
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(30, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(135, 31);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Hall capacity";
+            this.lblCapacity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCapacity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.lblCapacity.Location = new System.Drawing.Point(30, 117);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.Size = new System.Drawing.Size(135, 31);
+            this.lblCapacity.TabIndex = 26;
+            this.lblCapacity.Text = "Hall capacity";
             // 
             // label7
             // 
@@ -293,25 +293,25 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Price";
             // 
-            // cmbSessions
+            // cmbHall
             // 
-            this.cmbSessions.BackColor = System.Drawing.Color.White;
-            this.cmbSessions.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSessions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.cmbSessions.FormattingEnabled = true;
-            this.cmbSessions.Items.AddRange(new object[] {
+            this.cmbHall.BackColor = System.Drawing.Color.White;
+            this.cmbHall.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.cmbHall.FormattingEnabled = true;
+            this.cmbHall.Items.AddRange(new object[] {
             "A1",
             "A2",
             "B1",
             "C1",
             "D1",
             "D2"});
-            this.cmbSessions.Location = new System.Drawing.Point(109, 73);
-            this.cmbSessions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbSessions.Name = "cmbSessions";
-            this.cmbSessions.Size = new System.Drawing.Size(222, 30);
-            this.cmbSessions.TabIndex = 24;
-            this.cmbSessions.SelectedIndexChanged += new System.EventHandler(this.cmbSessions_SelectedIndexChanged);
+            this.cmbHall.Location = new System.Drawing.Point(109, 73);
+            this.cmbHall.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbHall.Name = "cmbHall";
+            this.cmbHall.Size = new System.Drawing.Size(222, 30);
+            this.cmbHall.TabIndex = 24;
+            this.cmbHall.SelectedIndexChanged += new System.EventHandler(this.cmbSessions_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -447,13 +447,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbSessions;
+        private System.Windows.Forms.ComboBox cmbHall;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCapacity;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
