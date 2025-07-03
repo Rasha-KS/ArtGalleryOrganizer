@@ -1,4 +1,6 @@
 ﻿using ArtGalleryOrganizer.Classes;
+using ArtGalleryOrganizer.Forms;
+using ArtGalleryOrganizer.Reports;
 using StudentProject1.Classes;
 using System;
 using System.Collections.Generic;
@@ -45,7 +47,6 @@ namespace ArtGalleryOrganizer
             //cmbHall.SelectedIndexChanged += (s, ev) => ValidateAndShowError();
             //dtpBookingDate.ValueChanged += (s, args) => ValidateAndShowError();
             //dtpTime.ValueChanged += (s, eventArgs) => ValidateAndShowError();
-            lblError.Visible = false; // نخفي اللابل بالبداية
 
             string query = "SELECT ArtistID, ArtistName FROM Artists";
             DataTable dt = DBHelper.GetData(query);
@@ -63,31 +64,12 @@ namespace ArtGalleryOrganizer
 
             cmbHall.SelectedIndex = -1;
             cmbArtistName.SelectedIndex = -1;
-            
+
             dgvBookings.ClearSelection();
             dgvBookings.MultiSelect = false;
             txtTotalPrice.Text = "";
 
         }
-
-
-        private void ValidateAndShowError()
-        {
-            string errorMsg = ValidateBookingDateTimeAndHall();
-
-            if (!string.IsNullOrEmpty(errorMsg))
-            {
-                lblError.Text = errorMsg;
-                lblError.ForeColor = Color.Red;
-                lblError.Visible = true;
-            }
-            else
-            {
-                lblError.Visible = false;
-            }
-        }
-
-       
 
 
 
@@ -419,7 +401,7 @@ namespace ArtGalleryOrganizer
             }
         }
 
-  
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -560,6 +542,33 @@ namespace ArtGalleryOrganizer
                 e.Value = dt.ToString("hh:mm tt");
                 e.FormattingApplied = true;
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (selectedBookingIndex == -1)
+            {
+                MessageBox.Show("Please select a booking to print its Invoice.", "Print Booking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            int bookingID = Convert.ToInt32(dgvBookings.CurrentRow.Cells["BookingID"].Value);
+
+            var f = new FrmReport();
+            var rpt = new BookingInvoice();
+
+            // إذا عندك باراميتر
+            rpt.SetParameterValue("ArtistName", dgvBookings.CurrentRow.Cells["ArtistName"].Value.ToString());
+            rpt.SetParameterValue("HallName", dgvBookings.CurrentRow.Cells["HallName"].Value.ToString());
+            rpt.SetParameterValue("BookingID", bookingID);
+
+            f.crystalReportViewer1.ReportSource = rpt;
+            f.crystalReportViewer1.ShowRefreshButton = false;
+            f.Text = "Booking Invoice";
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+
+
         }
     }
 }
