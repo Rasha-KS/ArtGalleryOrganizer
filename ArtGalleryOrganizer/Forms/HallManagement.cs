@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using ArtGalleryOrganizer.Classes;
@@ -115,6 +116,33 @@ namespace ArtGalleryOrganizer.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearForm();
+        }
+
+        private void textBoxCapacity_TextChanged(object sender, EventArgs e)
+        {
+           
+                // إزالة الحروف إن وجدت
+                textBoxCapacity.Text = new string(textBoxCapacity.Text.Where(char.IsDigit).ToArray());
+                textBoxCapacity.SelectionStart = textBoxCapacity.Text.Length;
+
+                // التحقق من الحد الأقصى
+                if (int.TryParse(textBoxCapacity.Text, out int capacityValue) && capacityValue > 2000)
+                {
+                    MessageBox.Show("Capacity cannot exceed 2000.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBoxCapacity.Text = "2000";
+                    textBoxCapacity.SelectionStart = textBoxCapacity.Text.Length;
+                }
+            }
+
+        private void textBoxPrice_TextChanged(object sender, EventArgs e)
+        {
+            string input = textBoxPrice.Text;
+            if (!decimal.TryParse(input, out _) && !string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Only numeric values are allowed in Price.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxPrice.Text = new string(input.Where(c => char.IsDigit(c) || c == '.').ToArray());
+                textBoxPrice.SelectionStart = textBoxPrice.Text.Length;
+            }
         }
     }
 }

@@ -3,30 +3,58 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using StudentProject1.Classes;
 using ArtGalleryOrganizer.Classes;
+using StudentProject1.Classes;
 
 namespace ArtGalleryOrganizer
 {
     public partial class ArtistsManagement : Form
     {
         int selectedRowIndex = -1;
+        ResizeControls r = new ResizeControls();
 
         public ArtistsManagement()
         {
             InitializeComponent();
         }
 
-        ResizeControls r = new ResizeControls();
+        private void ArtistsManagement_HandleCreated(object sender, EventArgs e)
+        {
+            r.Container = this;
+        }
 
         private void ArtistsManagement_Resize(object sender, EventArgs e)
         {
             r.ResizeControl();
         }
 
-        private void ArtistsManagement_HandleCreated(object sender, EventArgs e)
+        private void ArtistsManagement_Load(object sender, EventArgs e)
         {
-            r.Container = this;
+            LoadArtistsToGrid();
+            dataGridView1.ClearSelection();
+        }
+
+        private void LoadArtistsToGrid()
+        {
+            DataTable dt = DBHelper.GetData("SELECT * FROM Artists");
+            dataGridView1.DataSource = dt;
+            dataGridView1.ClearSelection();
+        }
+
+        private void ClearFields()
+        {
+            txtName.Clear();
+            txtEmail.Clear();
+            txtPhone.Clear();
+            txtNationalID.Clear();
+            selectedRowIndex = -1;
+            dataGridView1.ClearSelection();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            txtName.Focus();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -48,10 +76,70 @@ namespace ArtGalleryOrganizer
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnSaveArtist_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            txtName.Focus();
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtNationalID.Text) ||
+                string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                if (selectedRowIndex >= 0)
+                {
+                    // تعديل موجود
+                    int artistId = Convert.ToInt32(dataGridView1.Rows[selectedRowIndex].Cells["ArtistID"].Value);
+                    string updateQuery = @"UPDATE Artists 
+                                           SET ArtistName = @Name, Email = @Email, Phone = @Phone, NationalID = @NationalID 
+                                           WHERE ArtistID = @Id";
+                    DBHelper.Execute(updateQuery,
+                        new SqlParameter("@Name", txtName.Text),
+                        new SqlParameter("@Email", txtEmail.Text),
+                        new SqlParameter("@Phone", txtPhone.Text),
+                        new SqlParameter("@NationalID", txtNationalID.Text),
+                        new SqlParameter("@Id", artistId));
+
+                    MessageBox.Show("Artist updated successfully.", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // إضافة جديد - بدون ArtistID
+                    string insertQuery = @"INSERT INTO Artists (ArtistName, Email, Phone, NationalID) 
+                                           VALUES (@Name, @Email, @Phone, @NationalID)";
+                    DBHelper.Execute(insertQuery,
+                        new SqlParameter("@Name", txtName.Text),
+                        new SqlParameter("@Email", txtEmail.Text),
+                        new SqlParameter("@Phone", txtPhone.Text),
+                        new SqlParameter("@NationalID", txtNationalID.Text));
+
+                    MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                LoadArtistsToGrid();
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving artist: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedRowIndex = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                txtName.Text = row.Cells["ArtistName"].Value?.ToString();
+                txtEmail.Text = row.Cells["Email"].Value?.ToString();
+                txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+                txtNationalID.Text = row.Cells["NationalID"].Value?.ToString();
+            }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -93,8 +181,6 @@ namespace ArtGalleryOrganizer
             }
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e) { }
-
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
             try
@@ -105,6 +191,7 @@ namespace ArtGalleryOrganizer
                     txtPhone.Text = new string(txtPhone.Text.Where(char.IsDigit).ToArray());
                     txtPhone.SelectionStart = txtPhone.Text.Length;
                 }
+
                 if (txtPhone.Text.Length > 10)
                 {
                     txtPhone.Text = txtPhone.Text.Substring(0, 10);
@@ -117,102 +204,24 @@ namespace ArtGalleryOrganizer
             }
         }
 
-        private void btnSaveArtist_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtNationalID.Text) ||
-                string.IsNullOrWhiteSpace(txtPhone.Text))
-            {
-                MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                if (selectedRowIndex >= 0)
-                {
-                    int artistId = Convert.ToInt32(dataGridView1.Rows[selectedRowIndex].Cells["ArtistID"].Value);
-
-                    string updateQuery = @"UPDATE Artists SET ArtistName = @Name, Email = @Email, Phone = @Phone, NationalID = @NationalID WHERE ArtistID = @Id";
-                    DBHelper.Execute(updateQuery,
-                        new SqlParameter("@Name", txtName.Text),
-                        new SqlParameter("@Email", txtEmail.Text),
-                        new SqlParameter("@Phone", txtPhone.Text),
-                        new SqlParameter("@NationalID", txtNationalID.Text),
-                        new SqlParameter("@Id", artistId));
-
-                    MessageBox.Show("Artist updated successfully.", "Edit Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    var dt = DBHelper.GetData("SELECT ISNULL(MAX(ArtistID), 0) + 1 FROM Artists");
-                    int newId = Convert.ToInt32(dt.Rows[0][0]);
-
-                    string insertQuery = @"INSERT INTO Artists (ArtistID, ArtistName, Email, Phone, NationalID) VALUES (@Id, @Name, @Email, @Phone, @NationalID)";
-                    DBHelper.Execute(insertQuery,
-                        new SqlParameter("@Id", newId),
-                        new SqlParameter("@Name", txtName.Text),
-                        new SqlParameter("@Email", txtEmail.Text),
-                        new SqlParameter("@Phone", txtPhone.Text),
-                        new SqlParameter("@NationalID", txtNationalID.Text));
-
-                    MessageBox.Show("Artist added successfully.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                LoadArtistsToGrid();
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error while saving artist: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ArtistsManagement_Load(object sender, EventArgs e)
-        {
-            LoadArtistsToGrid();
-            dataGridView1.ClearSelection();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-            if (e.RowIndex >= 0)
-            {
-                selectedRowIndex = e.RowIndex;
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                txtName.Text = row.Cells["ArtistName"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtNationalID.Text = row.Cells["NationalID"].Value.ToString();
-                txtPhone.Text = row.Cells["Phone"].Value.ToString();
-            }
-        }
-
-        private void ClearFields()
-        {
-            txtName.Clear();
-            txtEmail.Clear();
-            txtNationalID.Clear();
-            txtPhone.Clear();
-            selectedRowIndex = -1;
-            dataGridView1.ClearSelection();
-        }
-
-        private void LoadArtistsToGrid()
-        {
-            dataGridView1.DataSource = null;
-            DataTable dt = DBHelper.GetData("SELECT * FROM Artists");
-            dataGridView1.DataSource = dt;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-    }
 
-    
+        private void txtNationalID_TextChanged(object sender, EventArgs e)
+        {
+            // إزالة أي أحرف غير أرقام
+            txtNationalID.Text = new string(txtNationalID.Text.Where(char.IsDigit).ToArray());
+            txtNationalID.SelectionStart = txtNationalID.Text.Length;
+
+            // الحد من الطول إلى 12 رقم فقط
+            if (txtNationalID.Text.Length > 12)
+            {
+                txtNationalID.Text = txtNationalID.Text.Substring(0, 12);
+                txtNationalID.SelectionStart = txtNationalID.Text.Length;
+                MessageBox.Show("National ID cannot exceed 12 digits.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -68,17 +69,30 @@ namespace ArtGalleryOrganizer
 
         private void MainScreen_Activated(object sender, EventArgs e)
         {
-            lblArtistCount.Text = SharedData.Artists.Count.ToString();
-            lblBookingCount.Text = SharedData.Bookings.Count.ToString();
-
             labelDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy - hh:mm tt");
 
-            dataGridView3.DataSource = SharedData.Bookings;
-            dataGridView3.Columns["Title"].Visible = false;
-            dataGridView3.Columns["PlusHours"].Visible = false;
-            dataGridView3.Columns["TotalPrice"].Visible = false;
-            dataGridView3.Columns["StartTime"].Visible = false;
+            // عدد الفنانين
+            string artistCountQuery = "SELECT COUNT(*) FROM Artists";
+            lblArtistCount.Text = DBHelper.GetData(artistCountQuery).Rows[0][0].ToString();
 
+            // عدد الحجوزات
+            string bookingCountQuery = "SELECT COUNT(*) FROM Bookings";
+            lblBookingCount.Text = DBHelper.GetData(bookingCountQuery).Rows[0][0].ToString();
+
+            // الاستعلام الرئيسي لعرض البيانات المطلوبة فقط
+            string query = @"
+        SELECT 
+            A.ArtistName AS [Artist Name],
+            H.HallName AS [Hall Name],
+            B.Date AS [Booking Date],
+            B.TotalHours AS [Total Hours]
+        FROM Bookings B
+        INNER JOIN Artists A ON B.ArtistID = A.ArtistID
+        INNER JOIN Halls H ON B.HallID = H.HallID
+        WHERE B.Date >= @Today";
+
+            DataTable dt = DBHelper.GetData(query, new SqlParameter("@Today", DateTime.Today));
+            dataGridView3.DataSource = dt;
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +109,12 @@ namespace ArtGalleryOrganizer
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MainScreen_Load_1(object sender, EventArgs e)
+        {
+           
+
         }
     }
        
