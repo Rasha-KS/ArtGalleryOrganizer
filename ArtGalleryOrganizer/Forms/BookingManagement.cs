@@ -121,7 +121,7 @@ namespace ArtGalleryOrganizer
 
 
             dgvBookings.Columns["Date"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dgvBookings.Columns["StartTime"].DefaultCellStyle.Format = @"hh\:mm";
+            dgvBookings.Columns["StartTime"].DefaultCellStyle.Format = "hh:mm tt";
             dgvBookings.Columns["TotalPrice"].DefaultCellStyle.Format = "N0";
         }
 
@@ -221,7 +221,7 @@ namespace ArtGalleryOrganizer
             selectedBookingIndex = -1;
             dgvBookings.ClearSelection();
             selectedBookingIndex = -1;
-
+            txtPlusHours.Text = "0";
 
         }
 
@@ -329,17 +329,28 @@ namespace ArtGalleryOrganizer
                 txtPlusHours.Focus();
                 return false;
             }
+            int artworkCount;
+            int capacity = int.Parse(lblCapacity.Text); // تأكدي إن القيمة في الـ Label رقم صحيح
 
-            if (!int.TryParse(txtArtworksCount.Text, out int artworksCount) || artworksCount < 0)
+            if (int.TryParse(txtArtworksCount.Text, out artworkCount))
             {
-                MessageBox.Show("Please enter a valid non-negative number of artworks.");
-                txtArtworksCount.Focus();
-                return false;
+                if (artworkCount > capacity)
+                {
+                    MessageBox.Show("The number of artworks exceeds the hall capacity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtArtworksCount.Text = capacity.ToString();
+                    return false;
+                }
             }
+            else
+            {
+                MessageBox.Show("Please enter a valid integer for the artwork count!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtArtworksCount.Clear();
+            }
+
 
             if (!decimal.TryParse(txtTotalPrice.Text, out decimal price) || price < 0)
             {
-                MessageBox.Show("Please enter a valid non-negative price.");
+                MessageBox.Show("Please enter a valid  price.");
                 txtTotalPrice.Focus();
                 return false;
             }
@@ -487,6 +498,68 @@ namespace ArtGalleryOrganizer
         private void cmbHall_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtArtworksCount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpTime_Leave(object sender, EventArgs e)
+        {
+            DateTime selectedTime = dtpTime.Value;
+            DateTime minTime = selectedTime.Date.AddHours(8);
+            DateTime maxTime = selectedTime.Date.AddHours(20);
+
+            if (selectedTime < minTime)
+            {
+                MessageBox.Show("Time must be between 8:00 AM and 8:00 PM.", "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpTime.Value = minTime;
+            }
+            else if (selectedTime > maxTime)
+            {
+                MessageBox.Show("Time must be between 8:00 AM and 8:00 PM.", "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpTime.Value = maxTime;
+            }
+        }
+
+        private void txtTotalHours_Leave(object sender, EventArgs e)
+        {
+            int totalHours;
+            if (!int.TryParse(txtTotalHours.Text, out totalHours))
+            {
+                MessageBox.Show("Please enter a valid number for total hours.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTotalHours.Clear();
+                txtTotalHours.Focus();
+                return;
+            }
+
+            // خذ وقت البداية (من dtpStartTime)
+            DateTime startTime = dtpTime.Value;
+
+            // احسب الوقت المتوقع للنهاية
+            DateTime endTime = startTime.AddHours(totalHours);
+
+            // ساعة النهاية المسموح بها (10 مساءً)
+            DateTime maxAllowedTime = startTime.Date.AddHours(22); // 22:00 في نفس اليوم
+
+            if (endTime > maxAllowedTime)
+            {
+                MessageBox.Show("The booking time exceeds 10:00 PM. Please reduce total hours.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTotalHours.Focus();
+            }
+        }
+
+        private void dgvBookings_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            if (dgvBookings.Columns[e.ColumnIndex].Name == "StartTime" && e.Value != null)
+            {
+                TimeSpan time = (TimeSpan)e.Value;
+                DateTime dt = DateTime.Today.Add(time);
+                e.Value = dt.ToString("hh:mm tt");
+                e.FormattingApplied = true;
+            }
         }
     }
 }
