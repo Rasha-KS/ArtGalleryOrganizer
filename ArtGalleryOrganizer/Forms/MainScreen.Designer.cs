@@ -66,6 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.panel10.SuspendLayout();
@@ -94,6 +95,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pictureBox16);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel6);
@@ -269,7 +271,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(80, 20);
+            this.label8.Location = new System.Drawing.Point(75, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 26);
             this.label8.TabIndex = 0;
@@ -444,9 +446,9 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.groupBox1.Location = new System.Drawing.Point(20, 269);
+            this.groupBox1.Location = new System.Drawing.Point(22, 255);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(616, 416);
+            this.groupBox1.Size = new System.Drawing.Size(616, 380);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recent Bookings:";
@@ -484,7 +486,7 @@
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 26;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(594, 347);
+            this.dataGridView3.Size = new System.Drawing.Size(594, 328);
             this.dataGridView3.TabIndex = 25;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -518,6 +520,20 @@
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(187, 18);
             this.labelDate.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(223)))), ((int)(((byte)(253)))));
+            this.button2.Location = new System.Drawing.Point(22, 640);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(241, 39);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Exit from system";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainScreen
             // 
@@ -602,5 +618,6 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

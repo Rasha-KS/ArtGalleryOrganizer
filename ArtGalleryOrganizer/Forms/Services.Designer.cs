@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,23 +38,23 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtServiceTotalPrice = new System.Windows.Forms.TextBox();
             this.chkPhotographer = new System.Windows.Forms.CheckBox();
             this.chkGuidedTour = new System.Windows.Forms.CheckBox();
             this.chkAdditionalSpace = new System.Windows.Forms.CheckBox();
             this.chkCafeCorner = new System.Windows.Forms.CheckBox();
             this.chkOpenBuffet = new System.Windows.Forms.CheckBox();
-            this.cmbTitle = new System.Windows.Forms.ComboBox();
+            this.cmbBookingID = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.dgvServiceInvoices = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceInvoices)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -65,16 +65,16 @@
             this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtTotalPrice);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtServiceTotalPrice);
             this.groupBox2.Controls.Add(this.chkPhotographer);
             this.groupBox2.Controls.Add(this.chkGuidedTour);
             this.groupBox2.Controls.Add(this.chkAdditionalSpace);
             this.groupBox2.Controls.Add(this.chkCafeCorner);
             this.groupBox2.Controls.Add(this.chkOpenBuffet);
-            this.groupBox2.Controls.Add(this.cmbTitle);
+            this.groupBox2.Controls.Add(this.cmbBookingID);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.label8);
@@ -88,7 +88,6 @@
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Services";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label7
             // 
@@ -159,13 +158,13 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "300$";
             // 
-            // textBox2
+            // txtTotalPrice
             // 
-            this.textBox2.Location = new System.Drawing.Point(233, 350);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(202, 29);
-            this.textBox2.TabIndex = 38;
+            this.txtTotalPrice.Location = new System.Drawing.Point(233, 350);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(202, 29);
+            this.txtTotalPrice.TabIndex = 38;
             // 
             // label2
             // 
@@ -176,7 +175,6 @@
             this.label2.Size = new System.Drawing.Size(147, 31);
             this.label2.TabIndex = 37;
             this.label2.Text = "Total Price ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -188,13 +186,13 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Service Total Price";
             // 
-            // textBox1
+            // txtServiceTotalPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 302);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(202, 29);
-            this.textBox1.TabIndex = 35;
+            this.txtServiceTotalPrice.Location = new System.Drawing.Point(233, 302);
+            this.txtServiceTotalPrice.Name = "txtServiceTotalPrice";
+            this.txtServiceTotalPrice.ReadOnly = true;
+            this.txtServiceTotalPrice.Size = new System.Drawing.Size(202, 29);
+            this.txtServiceTotalPrice.TabIndex = 35;
             // 
             // chkPhotographer
             // 
@@ -205,6 +203,7 @@
             this.chkPhotographer.TabIndex = 34;
             this.chkPhotographer.Text = "Photographer";
             this.chkPhotographer.UseVisualStyleBackColor = true;
+            this.chkPhotographer.CheckedChanged += new System.EventHandler(this.chkOpenBuffet_CheckedChanged);
             // 
             // chkGuidedTour
             // 
@@ -215,6 +214,7 @@
             this.chkGuidedTour.TabIndex = 33;
             this.chkGuidedTour.Text = "Guided Tours";
             this.chkGuidedTour.UseVisualStyleBackColor = true;
+            this.chkGuidedTour.CheckedChanged += new System.EventHandler(this.chkOpenBuffet_CheckedChanged);
             // 
             // chkAdditionalSpace
             // 
@@ -225,7 +225,7 @@
             this.chkAdditionalSpace.TabIndex = 32;
             this.chkAdditionalSpace.Text = "Additional Space";
             this.chkAdditionalSpace.UseVisualStyleBackColor = true;
-            this.chkAdditionalSpace.CheckedChanged += new System.EventHandler(this.chkAdditionalSpace_CheckedChanged);
+            this.chkAdditionalSpace.CheckedChanged += new System.EventHandler(this.chkOpenBuffet_CheckedChanged);
             // 
             // chkCafeCorner
             // 
@@ -236,6 +236,7 @@
             this.chkCafeCorner.TabIndex = 31;
             this.chkCafeCorner.Text = "Cafe Corner";
             this.chkCafeCorner.UseVisualStyleBackColor = true;
+            this.chkCafeCorner.CheckedChanged += new System.EventHandler(this.chkOpenBuffet_CheckedChanged);
             // 
             // chkOpenBuffet
             // 
@@ -246,26 +247,28 @@
             this.chkOpenBuffet.TabIndex = 30;
             this.chkOpenBuffet.Text = "Open Buffet";
             this.chkOpenBuffet.UseVisualStyleBackColor = true;
+            this.chkOpenBuffet.CheckedChanged += new System.EventHandler(this.chkOpenBuffet_CheckedChanged);
             // 
-            // cmbTitle
+            // cmbBookingID
             // 
-            this.cmbTitle.BackColor = System.Drawing.Color.White;
-            this.cmbTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTitle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.cmbTitle.FormattingEnabled = true;
-            this.cmbTitle.Items.AddRange(new object[] {
+            this.cmbBookingID.BackColor = System.Drawing.Color.White;
+            this.cmbBookingID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBookingID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBookingID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            this.cmbBookingID.FormattingEnabled = true;
+            this.cmbBookingID.Items.AddRange(new object[] {
             "A1",
             "A2",
             "B1",
             "C1",
             "D1",
             "D2"});
-            this.cmbTitle.Location = new System.Drawing.Point(207, 50);
-            this.cmbTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbTitle.Name = "cmbTitle";
-            this.cmbTitle.Size = new System.Drawing.Size(217, 30);
-            this.cmbTitle.TabIndex = 26;
+            this.cmbBookingID.Location = new System.Drawing.Point(207, 50);
+            this.cmbBookingID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBookingID.Name = "cmbBookingID";
+            this.cmbBookingID.Size = new System.Drawing.Size(217, 30);
+            this.cmbBookingID.TabIndex = 26;
+            this.cmbBookingID.SelectionChangeCommitted += new System.EventHandler(this.cmbBookingID_SelectionChangeCommitted);
             // 
             // btnDelete
             // 
@@ -305,45 +308,45 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "BookingID\t";
             // 
-            // dgvSales
+            // dgvServiceInvoices
             // 
-            this.dgvSales.AllowUserToAddRows = false;
-            this.dgvSales.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            this.dgvSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSales.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSales.EnableHeadersVisualStyles = false;
-            this.dgvSales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.dgvSales.Location = new System.Drawing.Point(530, 35);
-            this.dgvSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvSales.MultiSelect = false;
-            this.dgvSales.Name = "dgvSales";
-            this.dgvSales.ReadOnly = true;
-            this.dgvSales.RowHeadersVisible = false;
-            this.dgvSales.RowHeadersWidth = 51;
-            this.dgvSales.RowTemplate.Height = 26;
-            this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSales.Size = new System.Drawing.Size(500, 461);
-            this.dgvSales.TabIndex = 33;
-            this.dgvSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellClick);
+            this.dgvServiceInvoices.AllowUserToAddRows = false;
+            this.dgvServiceInvoices.AllowUserToResizeRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Transparent;
+            this.dgvServiceInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvServiceInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvServiceInvoices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvServiceInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvServiceInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServiceInvoices.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvServiceInvoices.EnableHeadersVisualStyles = false;
+            this.dgvServiceInvoices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.dgvServiceInvoices.Location = new System.Drawing.Point(530, 35);
+            this.dgvServiceInvoices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvServiceInvoices.MultiSelect = false;
+            this.dgvServiceInvoices.Name = "dgvServiceInvoices";
+            this.dgvServiceInvoices.ReadOnly = true;
+            this.dgvServiceInvoices.RowHeadersVisible = false;
+            this.dgvServiceInvoices.RowHeadersWidth = 51;
+            this.dgvServiceInvoices.RowTemplate.Height = 26;
+            this.dgvServiceInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServiceInvoices.Size = new System.Drawing.Size(500, 461);
+            this.dgvServiceInvoices.TabIndex = 33;
+            this.dgvServiceInvoices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellClick);
             // 
             // button1
             // 
@@ -366,7 +369,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
             this.ClientSize = new System.Drawing.Size(1061, 570);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgvSales);
+            this.Controls.Add(this.dgvServiceInvoices);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Services";
@@ -375,7 +378,7 @@
             this.Load += new System.EventHandler(this.Services_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceInvoices)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,21 +386,21 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbTitle;
+        private System.Windows.Forms.ComboBox cmbBookingID;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dgvSales;
+        private System.Windows.Forms.DataGridView dgvServiceInvoices;
         private System.Windows.Forms.CheckBox chkPhotographer;
         private System.Windows.Forms.CheckBox chkGuidedTour;
         private System.Windows.Forms.CheckBox chkAdditionalSpace;
         private System.Windows.Forms.CheckBox chkCafeCorner;
         private System.Windows.Forms.CheckBox chkOpenBuffet;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtServiceTotalPrice;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
