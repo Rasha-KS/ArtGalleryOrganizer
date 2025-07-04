@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ArtGalleryOrganizer.Classes;
+using ArtGalleryOrganizer.Reports;
+using System.Data.SqlClient;
 
 namespace ArtGalleryOrganizer.Forms
 {
@@ -28,6 +30,8 @@ namespace ArtGalleryOrganizer.Forms
             dgvServiceInvoices.ClearSelection();
             LoadBookingIDs();
             ClearForm();
+            currentInvoiceID = null;
+
         }
 
 
@@ -331,16 +335,43 @@ namespace ArtGalleryOrganizer.Forms
             txtTotalPrice.Text = totalPrice.ToString("F2");
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (currentInvoiceID == null)
+            {
+                MessageBox.Show("Please select a Service Invoice to print.", "Print Service Invoice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            int ServiceID = Convert.ToInt32(dgvServiceInvoices.CurrentRow.Cells["InvoiceID"].Value);
 
+            string query = @"SELECT b.Date 
+                 FROM ServiceInvoices s
+                 JOIN Bookings b ON s.BookingID = b.BookingID
+                 WHERE s.InvoiceID = @InvoiceID";
 
+            DataTable dt = DBHelper.GetData(query, new SqlParameter("@InvoiceID", ServiceID));
 
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No booking date found for this invoice.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DateTime bookingDate = Convert.ToDateTime(dt.Rows[0]["Date"]);
 
+            var f = new FrmReport();
+            var rpt = new ServiceInvoice();
 
+            // إذا عندك باراميتر
+            rpt.SetParameterValue("InvoiceID", ServiceID);
+            rpt.SetParameterValue("BookingDate", bookingDate);
 
-
-
-
+            f.crystalReportViewer1.ReportSource = rpt;
+            f.crystalReportViewer1.ShowRefreshButton = false;
+            f.Text = "Service Invoice";
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
     }
 
 }

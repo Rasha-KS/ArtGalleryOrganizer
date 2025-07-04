@@ -49,10 +49,10 @@
             this.textBoxPrice.BackColor = System.Drawing.Color.White;
             this.textBoxPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBoxPrice.Location = new System.Drawing.Point(181, 159);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBoxPrice.Location = new System.Drawing.Point(155, 129);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(241, 38);
+            this.textBoxPrice.Size = new System.Drawing.Size(207, 32);
             this.textBoxPrice.TabIndex = 28;
             this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
             // 
@@ -60,10 +60,9 @@
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label5.Location = new System.Drawing.Point(26, 85);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(22, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 50);
+            this.label5.Size = new System.Drawing.Size(101, 41);
             this.label5.TabIndex = 29;
             this.label5.Text = "Capacity";
             // 
@@ -71,10 +70,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label1.Location = new System.Drawing.Point(24, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(21, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 46);
+            this.label1.Size = new System.Drawing.Size(126, 37);
             this.label1.TabIndex = 23;
             this.label1.Text = "Hall Name";
             // 
@@ -82,10 +80,9 @@
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label4.Location = new System.Drawing.Point(26, 161);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(22, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 39);
+            this.label4.Size = new System.Drawing.Size(78, 32);
             this.label4.TabIndex = 27;
             this.label4.Text = "Price";
             // 
@@ -94,10 +91,10 @@
             this.textBoxCapacity.BackColor = System.Drawing.Color.White;
             this.textBoxCapacity.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCapacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.textBoxCapacity.Location = new System.Drawing.Point(181, 86);
-            this.textBoxCapacity.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.textBoxCapacity.Location = new System.Drawing.Point(155, 70);
+            this.textBoxCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCapacity.Name = "textBoxCapacity";
-            this.textBoxCapacity.Size = new System.Drawing.Size(241, 38);
+            this.textBoxCapacity.Size = new System.Drawing.Size(207, 32);
             this.textBoxCapacity.TabIndex = 26;
             this.textBoxCapacity.TextChanged += new System.EventHandler(this.textBoxCapacity_TextChanged);
             // 
@@ -105,10 +102,9 @@
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
-            this.label3.Location = new System.Drawing.Point(24, 236);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(21, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 39);
+            this.label3.Size = new System.Drawing.Size(117, 32);
             this.label3.TabIndex = 25;
             this.label3.Text = "Status";
             // 
@@ -116,10 +112,9 @@
             // 
             this.comboBoxHallName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxHallName.FormattingEnabled = true;
-            this.comboBoxHallName.Location = new System.Drawing.Point(181, 21);
-            this.comboBoxHallName.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxHallName.Location = new System.Drawing.Point(155, 17);
             this.comboBoxHallName.Name = "comboBoxHallName";
-            this.comboBoxHallName.Size = new System.Drawing.Size(241, 37);
+            this.comboBoxHallName.Size = new System.Drawing.Size(207, 31);
             this.comboBoxHallName.TabIndex = 35;
             this.comboBoxHallName.SelectedIndexChanged += new System.EventHandler(this.comboBoxHallName_SelectedIndexChanged);
             // 
@@ -137,11 +132,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxCapacity);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(26, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(22, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(447, 462);
+            this.groupBox1.Size = new System.Drawing.Size(383, 375);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
@@ -153,10 +146,9 @@
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Available",
             "Maintenance"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(181, 234);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxStatus.Location = new System.Drawing.Point(155, 190);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(241, 37);
+            this.comboBoxStatus.Size = new System.Drawing.Size(207, 31);
             this.comboBoxStatus.TabIndex = 40;
             // 
             // btnDelete
@@ -164,10 +156,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnDelete.Location = new System.Drawing.Point(240, 313);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnDelete.Location = new System.Drawing.Point(206, 254);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(173, 47);
+            this.btnDelete.Size = new System.Drawing.Size(148, 38);
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -178,10 +170,10 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnSave.Location = new System.Drawing.Point(27, 313);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSave.Location = new System.Drawing.Point(23, 254);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(173, 47);
+            this.btnSave.Size = new System.Drawing.Size(148, 38);
             this.btnSave.TabIndex = 38;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -192,10 +184,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.button1.Location = new System.Drawing.Point(239, 377);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button1.Location = new System.Drawing.Point(205, 306);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 47);
+            this.button1.Size = new System.Drawing.Size(148, 38);
             this.button1.TabIndex = 37;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
@@ -206,10 +198,10 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.btnClear.Location = new System.Drawing.Point(26, 377);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnClear.Location = new System.Drawing.Point(22, 306);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(173, 47);
+            this.btnClear.Size = new System.Drawing.Size(148, 38);
             this.btnClear.TabIndex = 36;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -217,13 +209,13 @@
             // 
             // HallManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(499, 506);
+            this.ClientSize = new System.Drawing.Size(428, 411);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "HallManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HallManagement";

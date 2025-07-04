@@ -1,5 +1,6 @@
 ﻿using ArtGalleryOrganizer.Classes;
 using ArtGalleryOrganizer.Forms;
+using ArtGalleryOrganizer.Reports;
 using StudentProject1.Classes;
 using System;
 using System.Collections.Generic;
@@ -111,9 +112,41 @@ namespace ArtGalleryOrganizer
             this.Close();
         }
 
-        private void MainScreen_Load_1(object sender, EventArgs e)
+
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-           
+            DateTime fromDate = dtpFromDate.Value.Date;
+            DateTime toDate = dtpToDate.Value.Date;
+
+            if (toDate < fromDate)
+            {
+                MessageBox.Show("End date must be same or after start date.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // تحقق هل فيه حجوزات بين هالتواريخ
+            string query = "SELECT * FROM Bookings WHERE Date BETWEEN @FromDate AND @ToDate";
+            DataTable dt = DBHelper.GetData(query,
+                new SqlParameter("@FromDate", fromDate),
+                new SqlParameter("@ToDate", toDate)
+            );
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No bookings found for the selected period.", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var f = new FrmReport();
+            var rpt = new FromToBookings();
+            rpt.SetParameterValue("FromDate", fromDate);
+            rpt.SetParameterValue("ToDate", toDate);
+
+            f.crystalReportViewer1.ReportSource = rpt;
+            f.crystalReportViewer1.ShowRefreshButton = false;
+            f.Text = "Bookings From - To";
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
 
         }
     }
