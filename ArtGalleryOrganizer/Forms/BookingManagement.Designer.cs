@@ -315,6 +315,7 @@
             // cmbHall
             // 
             this.cmbHall.BackColor = System.Drawing.Color.White;
+            this.cmbHall.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHall.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(122)))));
             this.cmbHall.FormattingEnabled = true;

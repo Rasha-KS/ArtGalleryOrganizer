@@ -149,6 +149,7 @@ namespace ArtGalleryOrganizer
             f.Show();
 
         }
+
     }
        
 }

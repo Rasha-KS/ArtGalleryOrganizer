@@ -109,17 +109,25 @@ namespace ArtGalleryOrganizer.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string hallName = comboBoxHallName.Text;
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this hall?", "Confirm Delete", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (comboBoxHallName.SelectedIndex!=-1)
             {
-                string deleteQuery = "DELETE FROM Halls WHERE HallName = @HallName";
-                DBHelper.Execute(deleteQuery, new SqlParameter("@HallName", hallName));
-                MessageBox.Show("Hall deleted.");
-                ClearForm();
-                LoadHalls();
+                string hallName = comboBoxHallName.Text;
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this hall?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    string deleteQuery = "DELETE FROM Halls WHERE HallName = @HallName";
+                    DBHelper.Execute(deleteQuery, new SqlParameter("@HallName", hallName));
+                    MessageBox.Show("Hall deleted.");
+                    ClearForm();
+                    LoadHalls();
+                }
             }
+            else
+            {
+                MessageBox.Show("Please select a Hall to delete.");
+            }
+         
         }
 
         private void btnClear_Click(object sender, EventArgs e)
