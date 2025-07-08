@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ArtGalleryOrganizer.Classes;
 using StudentProject1.Classes;
+using System.Text.RegularExpressions;
 
 namespace ArtGalleryOrganizer
 {
@@ -87,6 +88,27 @@ namespace ArtGalleryOrganizer
                 return;
             }
 
+            // التحقق من طول رقم الهاتف
+            if (txtPhone.Text.Length != 10)
+            {
+                MessageBox.Show("Phone number must be exactly 10 digits.", "Invalid Phone", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // التحقق من طول الرقم الوطني
+            if (txtNationalID.Text.Length != 12)
+            {
+                MessageBox.Show("National ID must be exactly 12 digits.", "Invalid National ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // التحقق من البريد باستخدام Regex
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!Regex.IsMatch(txtEmail.Text, emailPattern))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             try
             {
                 if (selectedRowIndex >= 0)

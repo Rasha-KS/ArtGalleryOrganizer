@@ -35,7 +35,8 @@ namespace ArtGalleryOrganizer.Forms
             comboBoxHallName.Text = "";
             textBoxCapacity.Clear();
             textBoxPrice.Clear();
-            comboBoxStatus.Text = "";
+            comboBoxStatus.SelectedIndex = -1;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,12 +48,20 @@ namespace ArtGalleryOrganizer.Forms
         private void btnSave_Click_1(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrWhiteSpace(comboBoxHallName.Text) ||
+                string.IsNullOrWhiteSpace(textBoxCapacity.Text) ||
+                string.IsNullOrWhiteSpace(textBoxPrice.Text) ||
+                string.IsNullOrWhiteSpace(comboBoxStatus.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string hallName = comboBoxHallName.Text;
             int capacity = int.Parse(textBoxCapacity.Text);
             decimal price = decimal.Parse(textBoxPrice.Text);
             string status = comboBoxStatus.Text;
 
-            string checkQuery = "SELECT COUNT(*) FROM Halls WHERE HallName = @HallName";
             int exists = (int)DBHelper.GetData($"SELECT COUNT(*) AS C FROM Halls WHERE HallName = '{hallName}'").Rows[0]["C"];
 
             if (exists > 0)
